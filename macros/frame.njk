@@ -1,0 +1,27 @@
+{# this container macro would utilize the src passed as well as utilize styles on the button #}
+
+{# It is possible to open the content of an <iframe> in a new window or tab using JavaScript. While you cannot directly force the <iframe> itself to open in a new window, you can create a link or button that, when clicked, opens the <iframe>'s source URL in a new window.
+Here's how you can achieve this: HTML Structure.
+Code
+
+    <iframe id="myIframe" src="your_iframe_content.html"></iframe>
+    <button onclick="openIframeInNewWindow()">Open in New Window</button>
+JavaScript Function.
+JavaScript
+
+    function openIframeInNewWindow() {
+        var iframe = document.getElementById('myIframe');
+        if (iframe && iframe.src) {
+            window.open(iframe.src, '_blank');
+        } else {
+            console.error("Iframe not found or src attribute is missing.");
+        }
+    }
+Explanation:
+document.getElementById('myIframe'): This retrieves a reference to the <iframe> element using its ID.
+iframe.src: This accesses the URL currently loaded in the <iframe>.
+window.open(iframe.src, '_blank'): This is the core of the solution.
+window.open() is a JavaScript method used to open a new browser window or tab.
+iframe.src is the URL that will be loaded in the new window/tab.
+'_blank' is a special target that instructs the browser to open the URL in a new, unnamed window or tab. The user's browser settings will determine whether it opens as a new tab or a new window.
+This method effectively takes the URL from the <iframe> and uses it to open a new browsing context, providing the desired functionality. #}
