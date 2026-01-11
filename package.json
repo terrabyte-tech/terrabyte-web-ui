@@ -26,6 +26,7 @@
     "layouts",
     "macros",
     "partials",
-    "utils"
+    "utils",
+    "index.njk"
   ]
 }
