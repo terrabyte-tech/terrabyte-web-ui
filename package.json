@@ -1,6 +1,6 @@
 {
   "name": "@terrabyte/web-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Design system of reusable components and styles for building Terrabyte web projects.",
   "main": "index.js",
   "scripts": {
