@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-{% include "@terrabyte/web-ui/partials/inspector-splash.njk" %}
+{% include "partials/inspector-splash.njk" %}
 
 <!--------->
 <!-- metadata -->
@@ -138,20 +138,20 @@
 {# ########## #}
 
   {# svg container component #}
-  {% include "@terrabyte/web-ui/partials/svgs.njk" %}
+  {% include "partials/svgs.njk" %}
 
 {# ########## #}
 {# sys ui #}
 {# ########## #}
 
   {# modals (not supported atm...) #}
-  {# {% include "@terrabyte/web-ui/modals.njk" %} #}
+  {# {% include "modals.njk" %} #}
 
   {# accessibility/screen reader TOC #}
   {# handled as .eleventy.js transform #}
 
   {# noscript banner component #}
-  {% include "@terrabyte/web-ui/partials/banners.njk" %}
+  {% include "partials/banners.njk" %}
 
 {# ########## #}
 {# page begins #}
@@ -159,9 +159,9 @@
 
   <a name="top"></a>
   {% if site.project == "Pixel Planet Today" %}
-    {% include "@terrabyte/web-ui/partials/ppt-header.njk" %}
+    {% include "partials/ppt-header.njk" %}
   {% else %}
-    {% include "@terrabyte/web-ui/partials/header.njk" %}
+    {% include "partials/header.njk" %}
   {% endif %}
 
   <main>
@@ -170,9 +170,9 @@
 
   <a name="footer"></a>
   {% if site.styleType == "pixel" %}
-    {% include "@terrabyte/web-ui/partials/pixel-footer.njk" %}
+    {% include "partials/pixel-footer.njk" %}
   {% else %}
-    {% include "@terrabyte/web-ui/partials/footer.njk" %}
+    {% include "partials/footer.njk" %}
   {% endif %}
 </body>
 </html>
