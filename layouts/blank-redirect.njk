@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-{% include "partials/inspector-splash.njk" %}
+{% include "@terrabyte/web-ui/partials/inspector-splash.njk" %}
 
 <!--------->
 <!-- metadata -->
@@ -16,7 +16,6 @@
   <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
 
   {# redirect URL should be included in page frontmatter #}
-  {# rework this to include a /?rel= value from the referring URL #}
   <meta http-equiv="Refresh" content="0; url={{ redirectUrl }}">
 
 
