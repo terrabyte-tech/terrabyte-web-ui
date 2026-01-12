@@ -4,9 +4,13 @@
 
 *{
   font-size:inherit;
+  font-family:inherit;
   outline:none;
   -webkit-tap-highlight-color:transparent;
   -webkit-touch-callout:none;
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
 }
 
 
@@ -16,7 +20,7 @@
 /* css variables */
 :root{
   /* default avatar (before load) */
-  --avatarPath: linear-gradient(135deg, var(--accent), var(--accent));
+  --avatarPath: linear-gradient(135deg, var(--accent-green), var(--accent-green));
   /* --light: #ffffff; */
   /* replace with --white */
   --dark: #333841;
@@ -46,7 +50,7 @@
   --errorred-light-trans:#e0414120;
   /* fonts */
   --primary-font: 'Manrope', sans-serif;
-  --secondary-font: 'Manrope', sans-serif;
+  --secondary-font: monospace;
 }
 /* dark mode */
 body.dark,
@@ -66,6 +70,7 @@ body{
   /* put gradient on main page content? */
   /* background:linear-gradient(135deg, #C1F0A3,#A0E1BA); */
   /* background-color:var(--background); */
+  /* font-family: 'Manrope', sans-serif; */
   /* color:var(--foreground); */
   font-size:14px;
   /* min-height:100vh; */
@@ -90,7 +95,6 @@ body::-webkit-scrollbar-track{
   border-radius:10px;
   transition:.15s;
 }
-/* .page-container{} */
 
 a{
   color:var(--accent);
@@ -103,6 +107,9 @@ a{
 a:hover{
   color:var(--accent-green-semi-dark-trans);
 }
+a:active{
+  /* color:var(--accent); */
+}
 a.icon-link{
   font-size:1.2em;
 }
@@ -111,6 +118,12 @@ a.icon-link{
   margin-right:12px;
 }
 .button-container > *:last-child{
+  margin-right:0;
+}
+.links-container.horizontal > *{
+  margin-right:20px;
+}
+.links-container.horizontal > *:last-child{
   margin-right:0;
 }
 button,
@@ -212,8 +225,7 @@ td{
 /* page layouts */
 .page-container{
   position:relative;
-  overflow:hidden;
-  /* overflow-x:hidden; */
+  overflow-x:hidden;
   z-index:1;
 }
 
