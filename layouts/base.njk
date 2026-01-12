@@ -107,6 +107,7 @@
       "logo": "{{ site.url }}/img/meta/logo.png",
       "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
     }
+    {# reference #}
     {# {
       "sameAs": ["https://instagram.com/terrabyte_tech", "https://mastodon.eco/@terrabyte", "https://app.wedonthavetime.org/profile/Terrabyte", "https://www.linkedin.com/company/terrabyte-tech/", "https://www.youtube.com/@TerrabyteEco", "https://profiles.eco/terrabyte", "https://github.com/terrabyte-tech", "https://patreon.com/terrabyte_tech"]
     } #}
@@ -161,21 +162,31 @@
 {# ########## #}
 
   <a name="top"></a>
-  {% if site.project == "Pixel Planet Today" %}
+  {# inject whatever header makes sense per-project basis #}
+  {% block header %}
+  {% endblock %}
+
+  {# delete.. #}
+  {# {% if site.project == "Pixel Planet Today" %}
     {% include "partials/ppt-header.njk" %}
   {% else %}
     {% include "partials/header.njk" %}
-  {% endif %}
+  {% endif %} #}
 
   <main>
     {{ content | safe }}
   </main>
 
   <a name="footer"></a>
-  {% if site.styleType == "pixel" %}
+  {# inject whatever footer makes sense per-project basis #}
+  {% block footer %}
+  {% endblock %}
+
+  {# delete..#}
+  {# {% if site.styleType == "pixel" %}
     {% include "partials/pixel-footer.njk" %}
   {% else %}
     {% include "partials/footer.njk" %}
-  {% endif %}
+  {% endif %} #}
 </body>
 </html>
