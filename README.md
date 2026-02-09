@@ -1,6 +1,10 @@
-# terrabyte-web-ui
+# Terrabyte Web UI
+`Terrabyte Tools`
 
-Design system of reusable components and styles for building Terrabyte web projects.
+Design system of reusable components and styles for building Terrabyte web projects via node (NPM) package.
+
+**NOTE:** Until Terrabyte contributors have more capacity, the Web UI package will be indefinitely paused. We have found that creating, managing, and further supporting a full UI Package is out of our depth for the time being. If you have interest in further developing our (beginnings of the) design system, please reach out (or make a PR)! In the meantime, please see the [boilerplate](https://github.com/terrabyte-tech/terrabyte-11ty-starter) for creating Terrabyte websites.
+
 
 ## Table of Contents
 
