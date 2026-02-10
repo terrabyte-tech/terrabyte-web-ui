@@ -24,6 +24,8 @@
   --ux-speed: .35s;
   --ux-hover-speed: var(--ux-speed);
   --ux-active-speed: .15s;
+  /* default bg/fg */
+  /* utilize data-theme on body! */
 }
 /* variables for dark/light mode */
 [data-theme~="dark"]{
@@ -36,8 +38,9 @@
 }
 /* if system mode is enabled, and set to Dark */
 @media (prefers-color-scheme: dark) {
-	[data-theme~="system"]{
-		--foreground: var(--light);
+	[data-theme~="system"],
+  [data-theme~="sys"]{
+		--foreground: var(--white);
     --background: var(--dark);
 	}
 }
