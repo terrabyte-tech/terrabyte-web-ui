@@ -73,6 +73,7 @@ body{
   /* font-family: 'Manrope', sans-serif; */
   /* color:var(--foreground); */
   font-size:14px;
+  background: linear-gradient(135deg, transparent,var(--accent-green-light-trans));
   /* min-height:100vh; */
   /* overflow:hidden; */
   /* height:100vh; */
@@ -217,9 +218,24 @@ td{
 
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 /* custom selectors, shared elements */
+/* sections */
 .max-width{
   max-width:1000px;
   margin:0 auto;
+}
+.padded-section{
+  padding:3rem 30px;
+}
+.full-section{
+  min-height:100vh;
+}
+.large-section{
+  min-height:60vh;
+}
+@media only screen and (max-width: 600px){
+  .padded-section{
+    padding:2rem 30px;
+  }
 }
 
 /* page layouts */
@@ -230,6 +246,48 @@ td{
 }
 
 /* page pieces */
+/* header & main nav */
+header .canapi-logo{
+  width: 125px;
+  height: 40px;
+  background-position: top left;
+  margin:0;
+}
+.nav-container{}
+.nav-item-container{
+  color:inherit;
+  font-weight:normal;
+  opacity:1;
+  margin-right:20px;
+  padding:8px 10px;
+  border-radius:4px;
+  font-size:18px;
+  /* transition:background-color .25s; */
+}
+.nav-item-container:last-child{
+  margin-right:0px;
+}
+.nav-item-container:hover{
+  background-color:var(--accent-green-light-trans);
+  color:inherit;
+}
+.nav-item-container:active{
+  color:inherit;
+  opacity: 1;
+  transform: scale(.97);
+  background-color:var(--accent-green-trans);
+}
+@media only screen and (max-width: 600px){
+  header .canapi-logo{
+    display:none;
+  }
+  .canapi-logo{
+    max-width: 350px;
+    width:100%;
+    height: 150px;
+  }
+}
+
 /* tooltips */
 [data-tooltip]{
   position:relative;
@@ -281,4 +339,16 @@ td{
 [data-tooltip-force-right] .tooltip{
   left:unset;
   right:0;
+}
+
+.code-text{
+  font-family: 'Roboto Mono', Courier, monospace;
+}
+.canapi-logo{
+  /* background-image: url('/img/canapi-logo.png'); */
+  max-width: 100%;
+  width:350px;
+  height: 150px;
+  margin-bottom: 20px;
+  background-position: center;
 }

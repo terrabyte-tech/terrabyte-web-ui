@@ -39,17 +39,17 @@ terrabyte-web-ui/
 ### Styles
 
 Global styles are provided in the `css/` directory:
-- `global-tb-styles.css` - Base Terrabyte styles
-- `global-tb-ui-styles.css` - UI component styles
-- `shared-canapi-styles.css` - Shared Canapi styles
-- `shared-pixel-styles.css` - Shared pixel styles
+- `global-tb-styles.css` - Base Terrabyte styles; CSS variables light/dark colors
+- `global-tb-ui-styles.css` - UI component styles; Cross-domain styles and components
+- `shared-canapi-styles.css` - Shared Canapi styles; Global styles specific to Canapi branding
+- `shared-pixel-styles.css` - Shared pixel styles; typography, imagery, etc.
 
 ## Development
 
 ### Available Scripts
 
 - `pnpm install` - Install dependencies
-- `pnpm run <script-name>` - Run any script defined in package.json
+- `pnpm run <script-name>` - Run any script defined in `package.json`
   - `build`: Run Eleventy build process
   - `start`: Serve project to preview in browser
 
@@ -58,15 +58,11 @@ Global styles are provided in the `css/` directory:
 
 This project follows [Semantic Versioning](https://semver.org/).
 
-### Bumping the Version
-
-Use the release script to automatically bump the version, create a git tag, and push to the repository.
-
 #### Prerequisites
 - Git must be configured and you must have push access to the repository
-- For automated GitHub releases: [GitHub CLI](https://cli.github.com/) must be installed and authenticated
+- Have npm/pnpm installed on your machine
 
-#### Commands
+#### Commands (WIP)
 
 Open a **bash terminal** and run:
 
