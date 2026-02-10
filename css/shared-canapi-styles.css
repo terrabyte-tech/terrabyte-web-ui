@@ -50,7 +50,8 @@
   --errorred-light-trans:#e0414120;
   /* fonts */
   --primary-font: 'Manrope', sans-serif;
-  --secondary-font: monospace;
+  --secondary-font: 'Manrope', sans-serif;
+  /* --secondary-font: 'Roboto Mono', monospace; */
 }
 /* dark mode */
 body.dark,
