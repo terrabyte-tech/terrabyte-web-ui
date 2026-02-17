@@ -73,6 +73,11 @@ hr{
   border:none;
   border-top:2px solid var(--accent);
 }
+[disabled]{
+  transform:scale(1)!important;
+  opacity:.45!important;
+  cursor:not-allowed!important;
+}
 /* ------------- */
 
 /* implementing shared variables (user interface) */

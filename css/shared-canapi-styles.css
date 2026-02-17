@@ -116,11 +116,12 @@ a.icon-link{
   font-size:1.2em;
 }
 
-.button-container > *{
-  margin-right:12px;
+/* .button-container > *{ */
+.button-container{
+  gap:12px;
 }
 .button-container > *:last-child{
-  margin-right:0;
+  /* margin-right:0; */
 }
 .links-container.horizontal > *{
   margin-right:20px;
@@ -129,7 +130,8 @@ a.icon-link{
   margin-right:0;
 }
 button,
-.button{
+.button,
+input[type="submit"]{
   border:1px solid var(--accent-green-light-trans);
   border-radius:4px;
   /* background-color:var(--background); */
@@ -144,33 +146,40 @@ button,
 button:hover,
 .button:hover,
 button:focus,
-.button:focus{
+.button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus{
   /* background-color:#CDF3DC; */
   border-color: var(--accent-green-trans);
   /* color: var(--accent-green-semi-dark-trans); */
   background-color:var(--accent-green-light-trans);
 }
 button:active,
-.button:active{
+.button:active,
+input[type="submit"]:active{
   /* background-color:#A2E1BB; */
   background-color:var(--accent-green-trans);
   transform:scale(.95);
 }
 /* primary buttons */
 button.primary,
-.button.primary{
+.button.primary,
+input[type="submit"]{
   background-color:var(--accent);
   color:var(--white);
 }
 button.primary:hover,
 .button.primary:hover,
 button.primary:focus,
-.button.primary:focus{
+.button.primary:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus{
   /* color:var(--grey); */
   background-color:var(--accent-green-semi-dark-trans);
 }
 button.primary:active,
-.button.primary:active{
+.button.primary:active,
+input[type="submit"]:active{
   color:var(--white);
   background-color:var(--accent);
 }
@@ -232,6 +241,10 @@ td{
 }
 .large-section{
   min-height:60vh;
+}
+.accent-section{
+  background-color:var(--accent);
+  color:var(--white);
 }
 @media only screen and (max-width: 600px){
   .padded-section{
