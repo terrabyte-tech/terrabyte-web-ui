@@ -2,6 +2,11 @@
 /* global Terrabyte UI styles */
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 
+/* sections */
+.gap-container{
+  gap:var(--space);
+}
+
 /* images */
 img{
   max-width:100%;

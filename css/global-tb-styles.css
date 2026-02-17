@@ -73,6 +73,10 @@ hr{
   border:none;
   border-top:2px solid var(--accent);
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--foreground);
+  opacity: .35; /* Firefox */
+}
 [disabled]{
   transform:scale(1)!important;
   opacity:.45!important;
