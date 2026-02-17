@@ -52,9 +52,6 @@
   --primary-font: 'Manrope', sans-serif;
   --secondary-font: 'Manrope', sans-serif;
   /* --secondary-font: 'Roboto Mono', monospace; */
-
-  /* spacing */
-  --space:2rem;
 }
 /* dark mode */
 body.dark,

@@ -26,6 +26,10 @@
   --ux-active-speed: .15s;
   /* default bg/fg */
   /* utilize data-theme on body! */
+  /* spacing */
+  --space-small:1rem;
+  --space-medium:2rem;
+  --space-large:4rem;
 }
 /* variables for dark/light mode */
 [data-theme~="dark"]{
@@ -97,5 +101,16 @@ hr{
 ::target-text{
     background-color:rgba(10, 140, 97);
     background-color:var(--accent);
+}
+
+/* sections */
+.small-gap{
+  gap:var(--space-small);
+}
+.medium-gap{
+  gap:var(--space-medium);
+}
+.large-gap{
+  gap:var(--space-large);
 }
 /* +++++++++++++++++++++++++++++++++++++++++++ */

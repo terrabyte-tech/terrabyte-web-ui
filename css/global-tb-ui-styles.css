@@ -3,9 +3,6 @@
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 
 /* sections */
-.gap-container{
-  gap:var(--space);
-}
 
 /* images */
 img{
