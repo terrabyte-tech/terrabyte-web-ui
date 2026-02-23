@@ -68,7 +68,6 @@
   <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.1.1/au.css">
 
   <!-- shared Terrabyte styles -->
-  {# <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-org-styles.css"> #}
   <link rel="stylesheet" href="/css/global-tb-styles.css">
   <link rel="stylesheet" href="/css/global-tb-ui-styles.css">
 
@@ -85,6 +84,12 @@
 
   <!-- site styles -->
   <link rel="stylesheet" href="/css/site-styles.css" async defer>
+
+  <!-- page styles -->
+  {% if styles %}
+    <link rel="stylesheet" href="{{ styles }}" async defer>
+  {% endif %}
+
 
   {# other conditional styles #}
   {# {% if testPage %} #}
@@ -120,6 +125,11 @@
   <!-- site scripts -->
   <script src="/js/site-scripts.js" async defer></script>
 
+  <!-- page scripts -->
+  {% if scripts %}
+    <script src="{{ scripts }}" async defer></script>
+  {% endif %}
+
 <!--------->
 <!-- analytics & APIs -->
 <!--------->
@@ -136,7 +146,7 @@
 </head>
 
 <body data-theme="{{ site.defaultTheme | default('light') }}">
-
+{% block body %}
 {# ########## #}
 {# dependencies #}
 {# ########## #}
@@ -188,5 +198,6 @@
   {% else %}
     {% include "partials/footer.njk" %}
   {% endif %} #}
+{% endblock %}
 </body>
 </html>
