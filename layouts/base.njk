@@ -176,13 +176,6 @@
   {% block header %}
   {% endblock %}
 
-  {# delete.. #}
-  {# {% if site.project == "Pixel Planet Today" %}
-    {% include "partials/ppt-header.njk" %}
-  {% else %}
-    {% include "partials/header.njk" %}
-  {% endif %} #}
-
   <main>
     {{ content | safe }}
   </main>
@@ -192,12 +185,6 @@
   {% block footer %}
   {% endblock %}
 
-  {# delete..#}
-  {# {% if site.styleType == "pixel" %}
-    {% include "partials/pixel-footer.njk" %}
-  {% else %}
-    {% include "partials/footer.njk" %}
-  {% endif %} #}
 {% endblock %}
 </body>
 </html>
