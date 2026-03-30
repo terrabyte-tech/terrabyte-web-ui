@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-{% block head %}
+{# {% block head %} #}
 
 {% include "partials/inspector-splash.njk" %}
 
@@ -66,6 +66,7 @@
 
   <!-- frameworks -->
   <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.1.1/au.css">
+  {% block additionalFrameworks %}{% endblock %}
 
   <!-- shared Terrabyte styles -->
   <link rel="stylesheet" href="/css/global-tb-styles.css">
@@ -84,6 +85,7 @@
 
   <!-- site styles -->
   <link rel="stylesheet" href="/css/site-styles.css" async defer>
+  {% block additionalSiteStyles %}{% endblock %}
 
   <!-- page styles -->
   {% if styles %}
@@ -142,11 +144,11 @@
     <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script>
   {% endif %}
   
-{% endblock %}
+{# {% endblock %} #}
 </head>
 
 <body data-theme="{{ site.defaultTheme | default('light') }}">
-{% block body %}
+{# {% block body %} #}
 {# ########## #}
 {# dependencies #}
 {# ########## #}
@@ -185,6 +187,6 @@
   {% block footer %}
   {% endblock %}
 
-{% endblock %}
+{# {% endblock %} #}
 </body>
 </html>
