@@ -76,7 +76,7 @@
   <link rel="stylesheet" href="/css/global-tb-styles.css">
   <link rel="stylesheet" href="/css/global-tb-ui-styles.css">
 
-  <!-- shared styles for site groupings -->
+  <!-- shared styles for site groupings DEPRECATE: Utilize the additionalSiteStyles block on a per-project basis -->
   <!-- shared pixel art styles -->
   {% if site.styleType == "pixel" %}
     <link rel="stylesheet" href="/css/shared-pixel-styles.css">
@@ -86,6 +86,9 @@
   {% if site.project == "Canapi" %}
     <link rel="stylesheet" href="/css/shared-canapi-styles.css">
   {% endif %}
+
+  <!-- additional shared styles for specific projects or project groupings -->
+  {% block additionalSharedStyles %}{% endblock %}
 
   <!-- site styles -->
   <link rel="stylesheet" href="/css/site-styles.css" async defer>
@@ -171,11 +174,10 @@
   {# accessibility/screen reader TOC #}
   {# handled as .eleventy.js transform #}
 
-  {# noscript banner component #}
   {% include "partials/banners.njk" %}
 
 {# ########## #}
-{# page begins #}
+{# page content begins #}
 {# ########## #}
 
   <a name="top"></a>
