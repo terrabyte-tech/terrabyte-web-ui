@@ -9,16 +9,20 @@
 <!--------->
 <!-- metadata -->
 <!--------->
-
-  <!-- site data now usable to DOM -->
+  {# <!-- site data now usable to DOM --> #}
   <script>
     window.siteData = {{ siteData | dump | safe }};
   </script>
 
-  <!-- index? -->
-  {# add variable to nunjucks templates that shouldn't be indexed in frontmatter; noIndex: true #}
+  {# <!-- index? --> #}
+  {# add variable to nunjucks page frontmatter if it shouldn't be indexed; noIndex: true #}
   {% if noIndex %}
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  {% endif %}
+
+  {# add variable to nunjucks page frontmatter if it should redirect instead of display page content; redirectUrl: "https://example.com" #}
+  {% if redirectUrl %}
+    <meta http-equiv="Refresh" content="0; url={{ redirectUrl }}">
   {% endif %}
 
   <link rel="canonical" href="{{ page.url | canonicalUrl(site) }}">
@@ -88,12 +92,13 @@
   {% block additionalSiteStyles %}{% endblock %}
 
   <!-- page styles -->
-  {% if styles %}
-    <link rel="stylesheet" href="{{ styles }}" async defer>
+  {% if styles or pageStyles %}
+    <link rel="stylesheet" href="{{ styles or pageStyles }}" async defer>
   {% endif %}
 
 
-  {# other conditional styles #}
+  {# other conditional styles; i.e. text-page styles #}
+  {% block additionalConditionalStyles %}{% endblock %}
   {# {% if testPage %} #}
     {# <link href="/css/test-styles.css" rel="stylesheet" type="text/css" /> #}
   {# {% else %} #}
@@ -114,22 +119,22 @@
       "logo": "{{ site.url }}/img/meta/logo.png",
       "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
     }
-    {# reference #}
+    {# reference (restructure to be able to include in site.json) #}
     {# {
       "sameAs": ["https://instagram.com/terrabyte_tech", "https://mastodon.eco/@terrabyte", "https://app.wedonthavetime.org/profile/Terrabyte", "https://www.linkedin.com/company/terrabyte-tech/", "https://www.youtube.com/@TerrabyteEco", "https://profiles.eco/terrabyte", "https://github.com/terrabyte-tech", "https://patreon.com/terrabyte_tech"]
     } #}
   </script>
 
   <!-- shared Terrabyte scripts -->
-  {# <script src="https://www.terrabyte.eco/js/shared-scripts.js"></script> #}
   <script src="/js/global-tb-scripts.js" async defer></script>
 
   <!-- site scripts -->
   <script src="/js/site-scripts.js" async defer></script>
+  {% block additionalSiteScripts %}{% endblock %}
 
   <!-- page scripts -->
-  {% if scripts %}
-    <script src="{{ scripts }}" async defer></script>
+  {% if scripts or pageScripts %}
+    <script src="{{ scripts or pageScripts }}" async defer></script>
   {% endif %}
 
 <!--------->
