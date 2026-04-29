@@ -20,7 +20,8 @@
 /* css variables */
 :root{
   /* default avatar (before load) */
-  --avatarPath: linear-gradient(135deg, var(--accent-green), var(--accent-green));
+  /* --avatarPath: linear-gradient(135deg, var(--accent-lime), var(--accent)); */
+  --avatarPath: linear-gradient(135deg, var(--accent-green-light-trans), var(--accent));
   /* --light: #ffffff; */
   /* replace with --white */
   --dark: #333841;
@@ -41,17 +42,12 @@
   /* shared theme management */
   --shadow:0px 8px 17px -8px rgb(0 0 0 / 10%);
 
-  /* error colors */
-  /* --error-red:#e04141; */
-  /* replace with... */
+  /* overwrite shared colors for this project's shared styles */
   --errorred:#e04141;
-  /* --error-red-light-trans:#e0414120; */
-  /* replace with... */
   --errorred-light-trans:#e0414120;
   /* fonts */
   --primary-font: 'Manrope', sans-serif;
   --secondary-font: 'Manrope', sans-serif;
-  /* --secondary-font: 'Roboto Mono', monospace; */
 }
 /* dark mode */
 body.dark,
@@ -167,6 +163,11 @@ a:active{
 }
 a.icon-link{
   font-size:1.2em;
+}
+/* prevent layout shift when loading icons */
+.icon-container{
+  min-height:1em;
+  min-width:1em;
 }
 
 /* buttons */
