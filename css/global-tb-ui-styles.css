@@ -21,6 +21,14 @@ input{
 /* ------------- */
 
 /* links */
+/* hide anchor tags */
+a[name]{
+  /* display:none; */
+  opacity:0;
+  position:absolute;
+  height:0;
+  width:0;
+}
 a{
   color:currentColor;
   text-decoration:none;
@@ -184,6 +192,7 @@ input[type='submit']:active{
   height:30px;
   margin-bottom:15px;
   position:relative;
+  z-index:2;
 }
 .loading-spinner:before{
   content:"";

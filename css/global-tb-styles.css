@@ -30,6 +30,7 @@
   --space-small:1rem;
   --space-medium:2rem;
   --space-large:4rem;
+  --space-xlarge:6rem;
 }
 /* variables for dark/light mode */
 [data-theme~="dark"]{
@@ -86,6 +87,9 @@ hr{
   opacity:.45!important;
   cursor:not-allowed!important;
 }
+[disabled][data-tooltip]:after{
+  content:"Functionality not supported";
+}
 /* ------------- */
 
 /* implementing shared variables (user interface) */
@@ -103,8 +107,30 @@ hr{
     background-color:var(--accent);
 }
 
-/* sections */
+/* ------------- */
+
+/* expand on Aurum styles */
+[data-au~="xsmall-gap"],
+.xsmall-gap{
+  gap:var(--space-xsmall);
+}
+[data-au~="small-gap"],
 .small-gap{
+  gap:var(--space-small);
+}
+[data-au~="medium-gap"],
+.medium-gap{
+  gap:var(--space-medium);
+}
+[data-au~="large-gap"],
+.large-gap{
+  gap:var(--space-large);
+}
+[data-au~="xlarge-gap"],
+.xlarge-gap{
+  gap:var(--space-xlarge);
+}
+/* .small-gap{
   gap:var(--space-small);
 }
 .medium-gap{
@@ -112,5 +138,5 @@ hr{
 }
 .large-gap{
   gap:var(--space-large);
-}
+} */
 /* +++++++++++++++++++++++++++++++++++++++++++ */
