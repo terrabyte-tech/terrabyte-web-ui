@@ -109,7 +109,7 @@ hr{
 
 /* ------------- */
 
-/* expand on Aurum styles */
+/* expand on Aurum styles; eventually move to Aurum package... */
 [data-au~="xsmall-gap"],
 .xsmall-gap{
   gap:var(--space-xsmall);
