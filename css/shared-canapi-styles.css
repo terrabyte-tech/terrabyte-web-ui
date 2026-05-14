@@ -431,6 +431,9 @@ header .canapi-logo{
 .code-text{
   font-family: 'Roboto Mono', Courier, monospace;
 }
+code{
+  background-color:var(--accent-green-light-trans);
+}
 .canapi-logo{
   /* background-image: url('/img/canapi-logo.png'); */
   max-width: 100%;
