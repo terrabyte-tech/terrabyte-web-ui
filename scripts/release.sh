@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# //////////
+# YOU CAN JUST DO THIS IN PNPM!? > pnpm version patch
+# //////////
+
 # Check if version type is provided
 if [ -z "$1" ]; then
   echo "Usage: ./release.sh <major|minor|patch> [--publish]"
