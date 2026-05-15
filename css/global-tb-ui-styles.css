@@ -2,6 +2,16 @@
 /* global Terrabyte UI styles */
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 
+/* page types */
+body.docs{
+Font-size:14px;
+Line-height:1.5;
+}
+body.docs ul, body.docs ol{
+Font-size:inherit;
+Padding-left:revert;
+}
+
 /* sections */
 
 /* images */
