@@ -368,10 +368,10 @@ header .canapi-logo{
 
 /* form elements */
 /* use gap-container on parent instead */
-.section-row{
+.section-row, .form-row{
   /* margin-bottom:20px; */
 }
-.section-row:last-child{
+.section-row:last-child, .form-row:last-child{
   /* margin-bottom:0; */
 }
 

@@ -82,13 +82,29 @@ hr{
   color: var(--foreground);
   opacity: .35; /* Firefox */
 }
+
+/* attributes */
 [disabled]{
   transform:scale(1)!important;
   opacity:.45!important;
   cursor:not-allowed!important;
 }
+[disabled] *{
+  pointer-events:none!important;
+}
+/* disabled tooltips */
+[disabled][data-tooltip]{
+  opacity:1!important;
+}
+[disabled][data-tooltip] i{
+  opacity:0.45!important;
+}
 [disabled][data-tooltip]:after{
   content:"Functionality not supported";
+}
+/* hidden */
+[hidden]{
+  display:none!important;
 }
 /* ------------- */
 
