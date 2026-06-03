@@ -162,7 +162,9 @@
 {# ########## #}
 
   {# svg container component #}
-  {% include "partials/svgs.njk" %}
+  {% block icons %}
+    {% include "partials/svgs.njk" %}
+  {% endblock %}
 
 {# ########## #}
 {# sys ui #}
