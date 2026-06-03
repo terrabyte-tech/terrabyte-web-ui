@@ -4,12 +4,12 @@
 
 /* page types */
 body.docs{
-Font-size:14px;
-Line-height:1.5;
+  font-size:14px;
+  line-height:1.5;
 }
 body.docs ul, body.docs ol{
-Font-size:inherit;
-Padding-left:revert;
+  font-size:inherit;
+  padding-left:revert;
 }
 
 /* sections */
@@ -28,7 +28,31 @@ input{
   border:none;
   outline:none;
 }
+/* custom inputs (inputs where the native input is hidden and custom html/css provides more functionality/flexibility) */
+.custom-input-container{
+  position:relative;
+}
+.custom-input-container input{
+  opacity:0;
+  position:absolute;
+  height:0;
+  width:0;
+}
 /* ------------- */
+
+/* basic typography */
+h1{
+  font-size:3em;
+}
+h2{
+  font-size:2.2em;
+}
+h3{
+  font-size:1.6em;
+}
+h4{
+  font-size:1.1em;
+}
 
 /* links */
 /* hide anchor tags */
@@ -47,6 +71,7 @@ a{
   transform:scale(1);
   opacity:1;
   display:inline-block;
+  transition:var(--ux-speed);
 }
 a.text-link{}
 /* hover state */
@@ -187,7 +212,8 @@ input[type='submit']:active{
   position:relative;
 }
 .loading-overlay{
-  background-color: #333333dd;
+  /* background-color: #333333dd; */
+  background-color: var(--background);
   backdrop-filter: blur(5px);
   position:absolute;
   top:0;
