@@ -224,4 +224,13 @@ input[type='submit']:active{
   }
 }
 
+/* custom selectors/elements */
+.highlight-container {
+    position: relative;
+    background-color: var(--accent);
+    display: inline-block;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+
 /* +++++++++++++++++++++++++++++++++++++++++++ */
