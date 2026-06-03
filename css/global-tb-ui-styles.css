@@ -20,15 +20,11 @@ img{
   max-height:100%;
 }
 /* inputs */
-input{
-  font-family: inherit;
-  font-size:inherit;
-  color:inherit;
-  background-color:transparent;
-  border:none;
-  outline:none;
+/* input container */
+.input-container{
+  position:relative;
 }
-/* custom inputs (inputs where the native input is hidden and custom html/css provides more functionality/flexibility) */
+/* custom input container (inputs where the native input is hidden and custom html/css provides more functionality/flexibility) */
 .custom-input-container{
   position:relative;
 }
@@ -38,21 +34,18 @@ input{
   height:0;
   width:0;
 }
+input{
+  font-family: inherit;
+  font-size:inherit;
+  color:inherit;
+  background-color:transparent;
+  border:none;
+  outline:none;
+}
 /* ------------- */
 
 /* basic typography */
-h1{
-  font-size:3em;
-}
-h2{
-  font-size:2.2em;
-}
-h3{
-  font-size:1.6em;
-}
-h4{
-  font-size:1.1em;
-}
+/* do on a per-project basis... */
 
 /* links */
 /* hide anchor tags */
