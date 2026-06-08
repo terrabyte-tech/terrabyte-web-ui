@@ -119,8 +119,10 @@ hr{
 }
 /* highlight via URL */
 ::target-text{
-    background-color:rgba(10, 140, 97);
-    background-color:var(--accent);
+  /* fallback */
+  background-color:rgba(10, 140, 97);
+  /* variable */
+  background-color:var(--accent);
 }
 
 /* ------------- */

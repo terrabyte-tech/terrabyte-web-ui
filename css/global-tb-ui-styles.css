@@ -60,7 +60,8 @@ a{
   color:currentColor;
   text-decoration:none;
   cursor:pointer;
-  user-select: none;
+  /* breaks when selecting a paragraph with a link inside */
+  /* user-select: none; */
   transform:scale(1);
   opacity:1;
   display:inline-block;
