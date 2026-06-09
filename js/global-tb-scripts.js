@@ -26,19 +26,21 @@ window.addEventListener("load", function(){
 
 ////////////////////
 // JS OBFUSCATION
-  const infoEmail = "info" + "@" + "terrabyte.eco";
+  const infoTerrabyteEmail = "info" + "@" + "terrabyte.eco";
+  // not used atm
+  // const adminTerrabyteEmail = "admin" + "@" + "terrabyte.eco";
 
   // Obfuscate email addresses to prevent scraping
   const obfuElems = document.querySelectorAll("[data-obfu-email]");
   obfuElems.forEach(function(elem) {
     const params = elem.getAttribute("href") || "";
-    elem.href = "mailto:" + infoEmail + params;
+    elem.href = "mailto:" + infoTerrabyteEmail + params;
 
     // set text content for obfu email
     const obfuTextElem = elem.querySelector("[data-obfu-email-text]");
 
     if (obfuTextElem){
-      obfuTextElem.textContent = infoEmail;
+      obfuTextElem.textContent = infoTerrabyteEmail;
     }
   });
 
