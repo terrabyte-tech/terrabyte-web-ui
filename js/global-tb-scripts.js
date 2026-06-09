@@ -33,8 +33,12 @@ window.addEventListener("load", function(){
   obfuElems.forEach(function(elem) {
     const params = elem.getAttribute("href") || "";
     elem.href = "mailto:" + infoEmail + params;
-    if (!elem.textContent.trim()){
-      elem.textContent = infoEmail;
+
+    // set text content for obfu email
+    const obfuTextElem = elem.querySelector("[data-obfu-email-text]");
+
+    if (obfuTextElem){
+      obfuTextElem.textContent = infoEmail;
     }
   });
 
