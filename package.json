@@ -4,7 +4,8 @@
   "description": "Design system of reusable components and styles for building Terrabyte web projects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "node scripts/release.js"
   },
   "repository": {
     "type": "git",
