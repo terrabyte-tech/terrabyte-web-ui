@@ -2,6 +2,10 @@
 
 All notable changes to `@terrabyte/web-ui` are documented here.
 
+## [1.1.0] - 2026-06-17
+- 1.1.0
+- feat: create changelog and include release info in changelog
+
 ## [1.0.8] - 2026-06-17
 - Replace `release.sh` with cross-platform `scripts/release.js`
 - Add `pnpm run release <patch|minor|major>` as the standard release command
