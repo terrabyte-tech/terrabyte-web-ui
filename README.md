@@ -1,10 +1,7 @@
 # Terrabyte Web UI
-`Terrabyte Tools`
+`@terrabyte/web-ui`
 
-Design system of reusable components and styles for building Terrabyte web projects via node (NPM) package.
-
-**NOTE:** Until Terrabyte contributors have more capacity, the Web UI package will be indefinitely paused. We have found that creating, managing, and further supporting a full UI Package is out of our depth for the time being. If you have interest in further developing our (beginnings of the) design system, please reach out (or make a PR)! In the meantime, please see the [boilerplate](https://github.com/terrabyte-tech/terrabyte-11ty-starter) for creating Terrabyte websites.
-
+Design system of reusable components and styles for building Terrabyte web projects.
 
 ## Table of Contents
 
@@ -15,8 +12,22 @@ Design system of reusable components and styles for building Terrabyte web proje
 
 ## Installation
 
+In a downstream Terrabyte project, install the package directly from GitHub:
+
 ```bash
-pnpm install
+pnpm install github:terrabyte-tech/terrabyte-web-ui
+```
+
+To install a specific version:
+
+```bash
+pnpm install github:terrabyte-tech/terrabyte-web-ui#v1.0.8
+```
+
+To check what version is currently installed in a project:
+
+```bash
+pnpm list @terrabyte/web-ui
 ```
 
 ## Project Structure
@@ -39,61 +50,44 @@ terrabyte-web-ui/
 ### Styles
 
 Global styles are provided in the `css/` directory:
-- `global-tb-styles.css` - Base Terrabyte styles; CSS variables light/dark colors
-- `global-tb-ui-styles.css` - UI component styles; Cross-domain styles and components
-- `shared-canapi-styles.css` - Shared Canapi styles; Global styles specific to Canapi branding
+- `global-tb-styles.css` - Base Terrabyte styles; CSS variables for light/dark colors
+- `global-tb-ui-styles.css` - UI component styles; cross-domain styles and components
+- `shared-canapi-styles.css` - Global styles specific to Canapi branding
 - `shared-pixel-styles.css` - Shared pixel styles; typography, imagery, etc.
 
 ## Development
 
-### Available Scripts
+Install dependencies:
 
-- `pnpm install` - Install dependencies
-- `pnpm run <script-name>` - Run any script defined in `package.json`
-  - `build`: Run Eleventy build process
-  - `start`: Serve project to preview in browser
-
+```bash
+pnpm install
+```
 
 ## Versioning & Releases
 
-This project follows [Semantic Versioning](https://semver.org/).
+This project follows [Semantic Versioning](https://semver.org/). See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
-#### Prerequisites
-- Git must be configured and you must have push access to the repository
-- Have npm/pnpm installed on your machine
+### Prerequisites
+- Git configured with push access to the repository
+- pnpm installed
 
-#### Commands (WIP)
+### Releasing a new version
 
-Open a **bash terminal** and run:
-
-**Patch release** (e.g., 1.0.0 → 1.0.1):
-```bash
-./scripts/release.sh patch
-```
-
-**Minor release** (e.g., 1.0.0 → 1.1.0):
-```bash
-./scripts/release.sh minor
-```
-
-**Major release** (e.g., 1.0.0 → 2.0.0):
-```bash
-./scripts/release.sh major
-```
-
-#### With GitHub Release (not yet implemented)
-
-To automatically create a GitHub release in addition to the version bump:
+From the project root, run:
 
 ```bash
-./scripts/release.sh patch --publish
-./scripts/release.sh minor --publish
-./scripts/release.sh major --publish
+pnpm run release patch   # bug fixes (1.0.0 → 1.0.1)
+pnpm run release minor   # new features (1.0.0 → 1.1.0)
+pnpm run release major   # breaking changes (1.0.0 → 2.0.0)
 ```
 
-The script will:
+This will:
 1. Bump the version in `package.json`
-2. Create a git commit with the new version
-3. Create an annotated git tag
-4. Push the commit and tag to the repository
-5. (Optional with `--publish`) Create a release on GitHub
+2. Create a git commit and annotated tag
+3. Push the commit and tag to the repository
+
+### Updating the package in a downstream project
+
+```bash
+pnpm install github:terrabyte-tech/terrabyte-web-ui
+```

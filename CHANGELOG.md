@@ -1,0 +1,42 @@
+# Changelog
+
+All notable changes to `@terrabyte/web-ui` are documented here.
+
+## [1.0.8] - 2026-06-17
+- Replace `release.sh` with cross-platform `scripts/release.js`
+- Add `pnpm run release <patch|minor|major>` as the standard release command
+- Add Contact link to footer
+- Support `sameAs` in `site.json`
+- Add Twitter card metadata
+- Fix OG metadata
+
+## [1.0.7] - 2025
+- Add disabled tooltip styles
+- Fix styles for code blocks on Canapi websites
+- Move shared styles from Canapi
+- Fix default avatar colors
+- Add 11ty block for adding project shared styles within template
+- Fix page styles and page scripts reference inconsistencies
+- Reconfigure blocks in base layout
+- Add basic footer for projects
+- Improve 11ty block structure for overwrites
+- Add email input styles
+- Add page styles and page scripts to `base.njk`
+- Add njk block tags for overwriting parts of `base.njk`
+- Add shared gap style elements
+- Reorganize shared styles
+- Add disabled and submit button styles
+- Fix 11ty syntax for default color theme value
+- Make body light theme by default
+- Integrate `data-theme` variable in site data
+- Fix images overflowing parent by default
+- Add shared Canapi styles
+- Fix canonical URL to include site context
+- Add release scripts
+
+## [1.0.6] - 2025
+- Initial versioned release
+- Add 11ty filters and transforms
+- Add Eleventy filter and transform registration via `index.js`
+- Set nunjucks environment for downstream project usage
+- Add base layout, partials, macros, CSS, and JS foundations

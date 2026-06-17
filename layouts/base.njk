@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-{# {% block head %} #}
-
 {% include "partials/inspector-splash.njk" %}
 
 <!--------->
@@ -15,12 +13,12 @@
   </script>
 
   {# <!-- index? --> #}
-  {# add variable to nunjucks page frontmatter if it shouldn't be indexed; noIndex: true #}
+  {# add variable to nunjucks page frontmatter if it shouldn't be indexed; i.e. noIndex: true #}
   {% if noIndex %}
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
   {% endif %}
 
-  {# add variable to nunjucks page frontmatter if it should redirect instead of display page content; redirectUrl: "https://example.com" #}
+  {# add variable to nunjucks page frontmatter if it should redirect; i.e. redirectUrl: "https://example.com" #}
   {% if redirectUrl %}
     <meta http-equiv="Refresh" content="0; url={{ redirectUrl }}">
   {% endif %}
@@ -128,10 +126,6 @@
       "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
       {% if site.sameAs %},"sameAs": {{ site.sameAs | dump }}{% endif %}
     }
-    {# reference (restructure to be able to include in site.json) #}
-    {# {
-      "sameAs": ["https://instagram.com/terrabyte_tech", "https://mastodon.eco/@terrabyte", "https://app.wedonthavetime.org/profile/Terrabyte", "https://www.linkedin.com/company/terrabyte-tech/", "https://www.youtube.com/@TerrabyteEco", "https://profiles.eco/terrabyte", "https://github.com/terrabyte-tech", "https://patreon.com/terrabyte_tech"]
-    } #}
   </script>
 
   <!-- shared Terrabyte scripts -->
@@ -158,11 +152,9 @@
     <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script>
   {% endif %}
   
-{# {% endblock %} #}
 </head>
 
 <body data-theme="{{ site.defaultTheme | default('light') }}">
-{# {% block body %} #}
 {# ########## #}
 {# dependencies #}
 {# ########## #}
@@ -202,6 +194,5 @@
   {% block footer %}
   {% endblock %}
 
-{# {% endblock %} #}
 </body>
 </html>
