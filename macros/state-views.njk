@@ -1,0 +1,45 @@
+{#
+  State view sections — renders the standard loading / empty / error sections
+  for any container that uses the data-state / data-show-on-state pattern.
+
+  Parameters:
+    emptyMsg   (string)  — Message shown in the empty state.
+                           Pass nothing (or null/false) to omit the empty section entirely.
+    errorMsg   (string)  — Message shown in the error state.
+                           Defaults to a generic "something went wrong" message if omitted.
+    emptyAttr  (string)  — Optional HTML attribute to add to the empty <i> tag,
+                           e.g. "data-chart-empty-message" (lets JS update the text dynamically).
+    errorAttr  (string)  — Optional HTML attribute to add to the error <i> tag,
+                           e.g. "data-create-error-message".
+
+  Example:
+    {% from "macros/state-views.njk" import stateViews %}
+
+    Basic usage:
+      {{ stateViews("No items to show.") }}
+
+    Custom error message:
+      {{ stateViews("No actions yet.", "Could not load actions.") }}
+
+    With a JS-updatable empty message:
+      {{ stateViews("No actions during this timeframe", "Could not load contribution data.", "data-chart-empty-message") }}
+
+    Loading + error only (no empty state):
+      {{ stateViews() }}
+#}
+
+{% macro stateViews(emptyMsg, errorMsg, emptyAttr, errorAttr) %}
+<section class="" data-show-on-state="loading" data-au="flex-container flex-width all-center text-center">
+  <div class="loading-spinner" data-au="flex-container all-center"></div>
+</section>
+
+{% if emptyMsg %}
+<section class="solid-section" data-show-on-state="empty" data-au="flex-container flex-width all-center text-center">
+  <i {% if emptyAttr %}{{ emptyAttr }}{% endif %}>{{ emptyMsg }}</i>
+</section>
+{% endif %}
+
+<section class="solid-section" data-show-on-state="error" data-au="flex-container flex-width all-center text-center">
+  <i class="error-text" {% if errorAttr %}{{ errorAttr }}{% endif %}>{{ errorMsg if errorMsg else "Something went wrong. Please refresh and try again." }}</i>
+</section>
+{% endmacro %}

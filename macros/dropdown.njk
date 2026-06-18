@@ -1,0 +1,72 @@
+{#
+  Parameters:
+    trigger  (object)  — Descriptor for the trigger element:
+      {
+        icon:    "ph ph-dots-three-vertical",  // optional icon class (e.g. Phosphor)
+        label:   "Options",                    // optional text label
+        tooltip: "Open menu"                   // optional data-tooltip value
+      }
+      icon and label can be used together (icon renders first).
+      At least one of icon or label is required.
+
+    items (array) - Array of item descriptor objects:
+
+      Divider:
+        { divider: true }
+
+      Action item (renders a <button>, wired via JS using data-dropdown-action):
+        { label, icon, action, destructive, disabled }
+
+      Navigation item (renders an <a href>, no JS required):
+        { label, icon, href, target, destructive, disabled }
+
+  Examples:
+    {% from "macros/dropdown.njk" import dropdown %}
+
+    // Icon-only trigger
+    {{ dropdown({ icon: "ph ph-dots-three-vertical" }, [...]) }}
+
+    // Icon trigger with tooltip
+    {{ dropdown({ icon: "ph ph-dots-three-vertical", tooltip: "Options" }, [...]) }}
+
+    // Text-only trigger
+    {{ dropdown({ label: "Actions" }, [...]) }}
+
+    // Icon + label trigger
+    {{ dropdown({ icon: "ph ph-caret-down", label: "More" }, [...]) }}
+#}
+
+{% macro dropdown(trigger, items) %}
+<div class="dropdown" data-dropdown>
+  <a class="icon-link icon-container" data-au="set-width flex-container all-center"
+     data-dropdown-trigger aria-haspopup="true" aria-expanded="false"
+     {% if trigger.tooltip %}data-tooltip-force-right data-tooltip="{{ trigger.tooltip }}"{% endif %}>
+    {% if trigger.icon %}<i class="{{ trigger.icon }}"></i>{% endif %}
+    {% if trigger.label %}<span>{{ trigger.label }}</span>{% endif %}
+  </a>
+  <div class="dropdown-menu" role="menu">
+    {% for item in items %}
+
+      {% if item.divider %}
+        <div class="dropdown-divider" role="separator"></div>
+
+      {% elif item.href %}
+        <a class="dropdown-item{% if item.destructive %} error-text{% endif %}"
+           href="{{ item.href }}"
+           {% if item.target %}target="{{ item.target }}" rel="noopener noreferrer"{% endif %}
+           role="menuitem"
+           {% if item.disabled %}aria-disabled="true" tabindex="-1"{% endif %}>
+          {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
+          <span>{{ item.label }}</span>
+        </a>
+
+      {% else %}
+        <button class="dropdown-item{% if item.destructive %} error-text{% endif %}" data-dropdown-action="{{ item.action }}" role="menuitem" {% if item.disabled %}disabled{% endif %}>
+          {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
+          <span>{{ item.label }}</span>
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
