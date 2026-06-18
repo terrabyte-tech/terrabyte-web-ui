@@ -77,21 +77,9 @@ body{
   /* height: calc(var(--vh, 1vh) * 100); */
 }
 
-/* style scrollbars */
-body::-webkit-scrollbar-track{
-  background-color:transparent;
-  transition:.15s;
-}
-*::-webkit-scrollbar{
-  width: 10px;
-  height: 10px;
-  background-color:transparent;
-  transition:.15s;
-}
+/* scrollbar border-radius override (global default is 2px) */
 *::-webkit-scrollbar-thumb{
-  background-color:var(--accent);
   border-radius:10px;
-  transition:.15s;
 }
 
 /* inputs */

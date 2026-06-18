@@ -241,4 +241,20 @@ blockquote {
 .badge.archived {
   opacity: 0.5;
 }
+/* style scrollbars */
+body::-webkit-scrollbar-track{
+  background-color:transparent;
+  transition:.15s;
+}
+*::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+  background-color:transparent;
+  transition:.15s;
+}
+*::-webkit-scrollbar-thumb{
+  background-color:var(--accent);
+  border-radius:2px;
+  transition:.15s;
+}
 /* +++++++++++++++++++++++++++++++++++++++++++ */
