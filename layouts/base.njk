@@ -18,7 +18,7 @@
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
   {% endif %}
 
-  {# add variable to nunjucks page frontmatter if it should redirect; i.e. redirectUrl: "https://example.com" #}
+  {# add variable to nunjucks page frontmatter if it should redirect; i.e. redirectUrl: https://example.com #}
   {% if redirectUrl %}
     <meta http-equiv="Refresh" content="0; url={{ redirectUrl }}">
   {% endif %}
