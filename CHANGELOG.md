@@ -2,6 +2,16 @@
 
 All notable changes to `@terrabyte/web-ui` are documented here.
 
+## [1.1.2] - 2026-06-23
+- 1.1.2
+- fix: update links to legal pages in pixel footer
+- fix: pixel footer accent colors and shared/overwriteable content
+- fix: implement custom scrollbars as global shared styles
+- 1.1.1
+- feat!: mass restructure of styles and components to better utilize shared across projects
+- 1.1.0
+- feat: create changelog and include release info in changelog
+
 ## [1.1.1] - 2026-06-18
 - 1.1.1
 - feat!: mass restructure of styles and components to better utilize shared across projects
