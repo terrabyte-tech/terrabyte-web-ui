@@ -197,6 +197,7 @@ input[type="submit"]{
   color:inherit;
   background-color:transparent;
   border:3px solid currentColor;
+  border-radius:0;
   padding:10px;
   font-size:15px;
   /* cursor: url("../img/ui/finger-pointer-cursor.png"), pointer; */

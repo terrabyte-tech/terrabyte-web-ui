@@ -127,7 +127,7 @@ hr{
 
 *:focus{
   /* outline-color: var(--accent); */
-  outline-color: currentColor;
+  /* outline-color: currentColor; */
   outline-color: var(--warningyellow);
   outline-style: solid;
   outline-border-radius:0;
