@@ -101,9 +101,13 @@
 
   {% if styles %}
   <!-- page styles -->
-    {% for style in styles %}
-      <link rel="stylesheet" href="{{ style }}">
-    {% endfor %}
+    {% if styles is string %}
+      <link rel="stylesheet" href="{{ styles }}">
+    {% else %}
+      {% for style in styles %}
+        <link rel="stylesheet" href="{{ style }}">
+      {% endfor %}
+    {% endif %}
   {% endif %}
 
 
@@ -141,10 +145,15 @@
 
   {% if scripts %}
   <!-- page scripts -->
-    {% for script in scripts %}
-      <script src="{{ script }}" async defer></script>
-    {% endfor %}
+    {% if scripts is string %}
+      <script src="{{ scripts }}" async defer></script>
+    {% else %}
+      {% for script in scripts %}
+        <script src="{{ script }}" async defer></script>
+      {% endfor %}
+    {% endif %}
   {% endif %}
+
 
 <!--------->
 <!-- analytics & APIs -->
