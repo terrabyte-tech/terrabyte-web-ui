@@ -40,7 +40,8 @@ input{
   color:inherit;
   background-color:transparent;
   border:none;
-  outline:none;
+  /* no-no for accessibility */
+  /* outline:none; */
 }
 /* ------------- */
 

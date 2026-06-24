@@ -247,10 +247,7 @@ input[type="number"]{
   cursor: url("../img/ui/mini-text-cursor.png"), text;
   /* font-size:15px; */
 }
-input:focus{
-  outline:none;
-}
-:placeholder{
+/* :placeholder{
   color:rgba(255,255,255,.5);
 }
 ::-webkit-input-placeholder{
@@ -258,7 +255,7 @@ input:focus{
 }
 ::-moz-placeholder{
   color:rgba(255,255,255,.5);
-}
+} */
 
 
 /* pixel icons */
