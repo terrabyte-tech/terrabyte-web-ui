@@ -135,6 +135,23 @@ hr{
   outline-offset: initial;
 }
 
+/* style scrollbars */
+body::-webkit-scrollbar-track{
+  background-color:transparent;
+  transition:.15s;
+}
+*::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+  background-color:transparent;
+  transition:.15s;
+}
+*::-webkit-scrollbar-thumb{
+  background-color:var(--accent);
+  border-radius:2px;
+  transition:.15s;
+}
+
 /* ------------- */
 
 /* expand on Aurum styles; eventually move to Aurum package... */
@@ -158,18 +175,9 @@ hr{
 .xlarge-gap{
   gap:var(--space-xlarge);
 }
-/* .small-gap{
-  gap:var(--space-small);
-}
-.medium-gap{
-  gap:var(--space-medium);
-}
-.large-gap{
-  gap:var(--space-large);
-} */
 /* ------------- */
 
-/* data-adaptive visibility system */
+/* adaptive views */
 [data-adaptive~="desktop-only"] { display: revert; }
 [data-adaptive~="tablet-only"]  { display: none; }
 [data-adaptive~="mobile-only"]  { display: none; }
@@ -183,7 +191,7 @@ hr{
 }
 /* ------------- */
 
-/* flex-wrap au utilities */
+/* adaptive flex-wrap */
 @media only screen and (max-width: 600px) {
   [data-au~="mobile-flex-wrap"] {
     flex-wrap: wrap;
@@ -199,38 +207,21 @@ hr{
   }
 }
 /* ------------- */
-
-/* blockquote */
-blockquote {
-  padding: var(--space-medium);
-  margin: var(--space-medium) 0;
-  border-left: 2px solid var(--accent);
-  background-color: #ffffff07;
-  border-radius: 2px;
-}
-/* ------------- */
-
-/* utility classes */
-.code-text {
-  font-family: var(--secondary-font);
+/* text utilities */
+.helper-message,
+.small-text {
+  font-size: 0.75rem;
 }
 .overflow-ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.table-container {
-  overflow-x: auto;
-}
-/* ------------- */
-
-/* text utilities */
-.helper-message,
-.small-text {
-  font-size: 0.75rem;
-}
 .error-text {
   color: var(--errorred);
+}
+.code-text {
+  font-family: var(--secondary-font);
 }
 /* ------------- */
 
@@ -250,21 +241,5 @@ blockquote {
 .badge.inactive,
 .badge.archived {
   opacity: 0.5;
-}
-/* style scrollbars */
-body::-webkit-scrollbar-track{
-  background-color:transparent;
-  transition:.15s;
-}
-*::-webkit-scrollbar{
-  width: 10px;
-  height: 10px;
-  background-color:transparent;
-  transition:.15s;
-}
-*::-webkit-scrollbar-thumb{
-  background-color:var(--accent);
-  border-radius:2px;
-  transition:.15s;
 }
 /* +++++++++++++++++++++++++++++++++++++++++++ */

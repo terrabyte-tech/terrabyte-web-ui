@@ -13,6 +13,16 @@ body.docs ul, body.docs ol{
 }
 
 /* sections */
+.table-container {
+  overflow-x: auto;
+}
+blockquote {
+  padding: var(--space-medium);
+  margin: var(--space-medium) 0;
+  border-left: 2px solid var(--accent);
+  background-color: #ffffff07;
+  border-radius: 2px;
+}
 
 /* images */
 img{
