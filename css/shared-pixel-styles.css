@@ -146,8 +146,6 @@ a{
 }
 a.text-link{
 	position:relative;
-	display:inline-block;
-	/* transition:.25s; */
 }
 a.text-link:after{
 	content:"";

@@ -64,7 +64,8 @@ a{
   /* user-select: none; */
   transform:scale(1);
   opacity:1;
-  display:inline-block;
+  /* display:inline-block; */
+  display:inline-flex;
   transition:var(--ux-speed);
 }
 a.text-link{}
