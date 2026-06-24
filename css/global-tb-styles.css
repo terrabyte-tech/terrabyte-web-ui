@@ -124,13 +124,14 @@ hr{
   /* variable */
   background-color:var(--accent);
 }
-
 *:focus{
+  outline:none;
+}
+*:focus-visible{
   /* outline-color: var(--accent); */
   /* outline-color: currentColor; */
   outline-color: var(--warningyellow);
   outline-style: solid;
-  outline-border-radius:0;
   outline-width: 3px;
   outline-offset: initial;
 }
