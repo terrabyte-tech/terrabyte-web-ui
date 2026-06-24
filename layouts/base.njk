@@ -7,6 +7,7 @@
 <!--------->
 <!-- metadata -->
 <!--------->
+
   {# <!-- site data now usable to DOM --> #}
   <script>
     window.siteData = {{ siteData | dump | safe }};
@@ -66,9 +67,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="{{ site.fontsRel }}" rel="stylesheet">
 
-  <!-- icons -->
   {% if site.iconsRel %}
-    <script src="{{ site.iconsRel }}"></script>
+  <!-- icons -->
+  <script src="{{ site.iconsRel }}"></script>
   {% endif %}
 
   <!-- frameworks -->
@@ -79,27 +80,30 @@
   <link rel="stylesheet" href="/css/global-tb-styles.css">
   <link rel="stylesheet" href="/css/global-tb-ui-styles.css">
 
-  <!-- shared styles for site groupings DEPRECATE: Utilize the additionalSiteStyles block on a per-project basis -->
-  <!-- shared pixel art styles -->
+  {# DEPRECATE: Utilize the additionalSiteStyles block on a per-project basis #}
   {% if site.styleType == "pixel" %}
+    <!-- shared pixel art styles -->
     <link rel="stylesheet" href="/css/shared-pixel-styles.css">
   {% endif %}
 
-  <!-- shared project styles for {{ site.project }}; if applicable to that project -->
+  {# Shared project styles, if applicable #}
   {% if site.project == "Canapi" %}
+  <!-- shared project styles for {{ site.project }} -->
     <link rel="stylesheet" href="/css/shared-canapi-styles.css">
   {% endif %}
 
-  <!-- additional shared styles for specific projects or project groupings -->
+  <!-- additional shared styles for specific projects or project groupings (if applicable) -->
   {% block additionalSharedStyles %}{% endblock %}
 
   <!-- site styles -->
   <link rel="stylesheet" href="/css/site-styles.css">
   {% block additionalSiteStyles %}{% endblock %}
 
+  {% if styles %}
   <!-- page styles -->
-  {% if styles or pageStyles %}
-    <link rel="stylesheet" href="{{ styles or pageStyles }}">
+    {% for style in styles %}
+      <link rel="stylesheet" href="{{ style }}">
+    {% endfor %}
   {% endif %}
 
 
@@ -135,9 +139,11 @@
   <script src="/js/site-scripts.js" async defer></script>
   {% block additionalSiteScripts %}{% endblock %}
 
+  {% if scripts %}
   <!-- page scripts -->
-  {% if scripts or pageScripts %}
-    <script src="{{ scripts or pageScripts }}" async defer></script>
+    {% for script in scripts %}
+      <script src="{{ script }}" async defer></script>
+    {% endfor %}
   {% endif %}
 
 <!--------->
@@ -147,8 +153,8 @@
   <!-- microanalytics -->
   <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
 
-  <!-- canapi -->
   {% if site.canapiKey %}
+  <!-- canapi -->
     <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script>
   {% endif %}
   
