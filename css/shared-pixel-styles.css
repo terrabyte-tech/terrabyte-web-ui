@@ -18,6 +18,10 @@
 *{
   image-rendering: pixelated;
 }
+*:focus-visible{
+  outline-style: solid;
+  outline-width: 3px;
+}
 body{
   font-size:22px;
   line-height:1.3em;

@@ -128,12 +128,15 @@ hr{
   outline:none;
 }
 *:focus-visible{
-  /* outline-color: var(--accent); */
-  /* outline-color: currentColor; */
   outline-color: var(--warningyellow);
-  outline-style: solid;
-  outline-width: 3px;
   outline-offset: initial;
+}
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="password"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline-color:var(--accent);
 }
 
 /* style scrollbars */
@@ -220,6 +223,9 @@ body::-webkit-scrollbar-track{
 }
 .error-text {
   color: var(--errorred);
+}
+.warning-text {
+  color: var(--warningyellow);
 }
 .code-text {
   font-family: var(--secondary-font);
