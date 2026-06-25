@@ -438,7 +438,7 @@ footer .section-content{
 }
 /* custom sizing for odd-sized logos */
 .footer-logo.tb-logo{
-  background-image:url('/img/branding/terrabyte-white-pixel-logo.png');
+  background-image:url('/img/pixel/branding/terrabyte-white-pixel-logo.png');
   width:200px;
 }
 
