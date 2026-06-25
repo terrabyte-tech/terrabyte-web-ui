@@ -262,22 +262,24 @@ input[type="number"]{
   display:block;
   background-color:transparent;
   max-width:100%;
-  padding-bottom:10px;
+  padding:1rem;
+  padding-left:0;
   border:none;
   border-bottom:3px solid currentColor;
   text-overflow:ellipsis;
   cursor: url("/img/pixel/ui/mini-text-cursor.png"), text;
-  /* font-size:15px; */
 }
-/* :placeholder{
-  color:rgba(255,255,255,.5);
+
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="password"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  padding-left:1rem;
+  outline:none;
+  background-color:var(--background);
+  background-color:rgba(255, 255, 255, .5);
 }
-::-webkit-input-placeholder{
-  color:rgba(255,255,255,.5);
-}
-::-moz-placeholder{
-  color:rgba(255,255,255,.5);
-} */
 
 
 /* pixel icons */
