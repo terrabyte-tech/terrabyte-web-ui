@@ -1,6 +1,6 @@
 {% macro banner(content, id, dismissible=true, timeout=false, position="top", type="info") %}
   <div id="{{ id }}"
-    class="banner {{ position }} {{ type }}"
+    class="banner show {{ position }} {{ type }}"
     {% if timeout %} data-timeout="{{ timeout }}" {% endif %}
     role="alert" aria-live="polite"
   >

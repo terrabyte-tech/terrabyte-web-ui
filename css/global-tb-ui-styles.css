@@ -147,38 +147,39 @@ input[type='submit']:active{
 /* ------------- */
 
 /* banners */
-.banner{
+.banner {
   position: fixed;
   left: 0;
   z-index: 900;
   width: 100%;
   padding: 15px 20px;
   font-size: 12px;
-  color:white;
-  background-color:var(--tbgreen);
+  color: white;
+  background-color: var(--tbgreen);
+  opacity: 0;
+  pointer-events: none;
   transition: opacity var(--ux-speed);
 }
 .banner.show {
   opacity: 1;
-}
-.banner[hidden] {
-  opacity: 0;
-  pointer-events: none;
+  pointer-events: auto;
 }
 .banner button {
   color: currentColor;
 }
-.banner.top{
+.banner.top {
   top: 0;
 }
-.banner.info{
+.banner.bottom {
+  bottom: 0;
+}
+.banner.info {
   background-color: var(--infoblue);
 }
-.banner.warning{
+.banner.warning {
   background-color: var(--warningyellow);
-  color:dark;
 }
-.banner.error{
+.banner.error {
   background-color: var(--errorred);
 }
 /* ------------- */
