@@ -293,7 +293,7 @@ textarea:focus-visible{
   height:40px;
   display:inline-block;
   vertical-align:middle;
-  margin:0 3px;
+  /* margin:0 3px; */
 }
 /* icons from spritesheet */
 #instagram-icon,
