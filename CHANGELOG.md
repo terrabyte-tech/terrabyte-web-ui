@@ -2,6 +2,47 @@
 
 All notable changes to `@terrabyte/web-ui` are documented here.
 
+## [1.2.5] - 2026-06-26
+- 1.2.5
+- fix: pixel footer social media spacing issues
+- 1.2.4
+- fix: pixel footer social media icon spacing fixes
+- 1.2.3
+- feat: include socials component in shared pixel footer
+- fix: pixel styles for text inputs and similar elements
+- 1.2.2
+- fix: path to pixel Terrabyte logo in pixel footer
+- 1.2.1
+- feat: add pixel Terrabyte logo to pixel-only imported images
+- 1.2.0
+- fix: remove old data-theme utility class reference
+- feat!: add shared pixel icons (added only to projects marked as "styleType" = "pixel" in site.json
+- fix: update global input accessibility styles
+- 1.1.9
+- fix: focus outlines only on keyboard navigation
+- 1.1.8
+- feat: pixel style scrollbars on pixel websites
+- fix: border radius to 0 on pixel style buttons
+- 1.1.7
+- fix: update focus outline for accessibility across websites
+- 1.1.6
+- fix: style change to keep punctuation on the same line as text links (no orphan punctuation)
+- 1.1.5
+- feat: include form styles on shared pixel styles
+- 1.1.4
+- fix: allow page styles and scripts to be either an array (multiple values) or a string (singular value)
+- 1.1.3
+- feat: support multiple page-styles and page-scripts in page frontmatter
+- docs: fix typo in documentation-type comment
+- 1.1.2
+- fix: update links to legal pages in pixel footer
+- fix: pixel footer accent colors and shared/overwriteable content
+- fix: implement custom scrollbars as global shared styles
+- 1.1.1
+- feat!: mass restructure of styles and components to better utilize shared across projects
+- 1.1.0
+- feat: create changelog and include release info in changelog
+
 ## [1.2.4] - 2026-06-26
 - 1.2.4
 - fix: pixel footer social media icon spacing fixes
