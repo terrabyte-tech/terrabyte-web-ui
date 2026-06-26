@@ -189,7 +189,10 @@
   {# accessibility/screen reader TOC #}
   {# handled as .eleventy.js transform #}
 
-  {% include "partials/banners.njk" %}
+  {% block banners %}
+    {% include "partials/banners.njk" %}
+  {% endblock %}
+  
 
 {# ########## #}
 {# page content begins #}
