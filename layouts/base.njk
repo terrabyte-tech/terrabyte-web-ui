@@ -63,9 +63,24 @@
 <!--------->
 
   <!-- fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="{{ site.fontsRel }}" rel="stylesheet">
+  {% if site.fonts or site.fontsCss %}
+    {% if site.fontsCss %}
+      <link rel="stylesheet" href="{{ site.fontsCss }}">
+    {% endif %}
+    {% if site.fonts %}
+      {% if site.fonts is string %}
+        <link rel="preload" href="{{ site.fonts }}" as="font" type="font/woff2" crossorigin>
+      {% else %}
+        {% for font in site.fonts %}
+          <link rel="preload" href="{{ font }}" as="font" type="font/woff2" crossorigin>
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% elif site.fontsRel %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{ site.fontsRel }}" rel="stylesheet">
+  {% endif %}
 
   {% if site.iconsRel %}
   <!-- icons -->
@@ -137,19 +152,19 @@
   </script>
 
   <!-- shared Terrabyte scripts -->
-  <script src="/js/global-tb-scripts.js" async defer></script>
+  <script src="/js/global-tb-scripts.js" defer></script>
 
   <!-- site scripts -->
-  <script src="/js/site-scripts.js" async defer></script>
+  <script src="/js/site-scripts.js" defer></script>
   {% block additionalSiteScripts %}{% endblock %}
 
   {% if scripts %}
   <!-- page scripts -->
     {% if scripts is string %}
-      <script src="{{ scripts }}" async defer></script>
+      <script src="{{ scripts }}" defer></script>
     {% else %}
       {% for script in scripts %}
-        <script src="{{ script }}" async defer></script>
+        <script src="{{ script }}" defer></script>
       {% endfor %}
     {% endif %}
   {% endif %}
@@ -169,7 +184,16 @@
   
 </head>
 
-<body data-theme="{{ site.defaultTheme | default('light') }}">
+<body data-theme="{{ site.defaultTheme | default('system') }}">
+  {# IMMEDIATE: load color theme, if previously set, to limit FOUC #}
+  <script>
+    (function(){
+      var s = localStorage.getItem("colorTheme");
+      var d = "{{ site.defaultTheme | default('system') }}";
+      if(s) document.body.setAttribute("data-theme", s);
+      else document.body.setAttribute("data-theme", d);
+    })();
+  </script>
 {# ########## #}
 {# dependencies #}
 {# ########## #}
