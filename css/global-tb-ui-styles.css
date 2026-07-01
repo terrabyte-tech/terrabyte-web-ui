@@ -369,11 +369,11 @@ a.dropdown-item {
 }
 /* ------------- */
 
-/* color scheme switcher */
-.color-scheme-container {
+/* color theme switcher */
+.color-theme-container {
   position: relative;
 }
-.color-scheme-icons-container {
+.color-theme-icons-container {
   position: relative;
   width: 70px;
   margin-bottom: 10px;
@@ -391,36 +391,36 @@ a.dropdown-item {
   width: 24px;
   transition: left .25s;
 }
-[data-color-scheme="light"] .color-indicator-knob {
+[data-color-theme="light"] .color-indicator-knob {
   left: calc(0% - 4px);
 }
-[data-color-scheme="dark"] .color-indicator-knob {
+[data-color-theme="dark"] .color-indicator-knob {
   left: calc(50%);
   transform: translate(-50%, -50%);
 }
-[data-color-scheme="system"] .color-indicator-knob {
+[data-color-theme="system"] .color-indicator-knob {
   left: calc(100% - 20px);
 }
-.color-scheme-icon {
+.color-theme-icon {
   cursor: pointer;
   z-index: 2;
   font-size: 16px;
   transition: color .25s;
 }
-.selected.color-scheme-icon {
+.selected.color-theme-icon {
   color: var(--white);
 }
-.color-scheme-label-container {
+.color-theme-label-container {
   position: relative;
   height: 20px;
 }
-.color-scheme-label {
+.color-theme-label {
   position: absolute;
   left: 0;
   opacity: 0;
   transition: .15s;
 }
-.selected.color-scheme-label {
+.selected.color-theme-label {
   opacity: 1;
 }
 /* +++++++++++++++++++++++++++++++++++++++++++ */
