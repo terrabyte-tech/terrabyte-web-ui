@@ -182,16 +182,24 @@ body::-webkit-scrollbar-track{
 /* ------------- */
 
 /* adaptive views */
-[data-adaptive~="desktop-only"] { display: revert; }
-[data-adaptive~="tablet-only"]  { display: none; }
-[data-adaptive~="mobile-only"]  { display: none; }
-@media only screen and (max-width: 930px) {
-  [data-adaptive~="desktop-only"] { display: none; }
-  [data-adaptive~="tablet-only"]  { display: revert; }
-}
+/* Breakpoints: mobile 0-600, tablet 601-930, desktop 931+.
+   data-adaptive takes a space-separated list of the form factors an
+   element should be VISIBLE at, e.g. data-adaptive="tablet desktop".
+   Each media query below hides the element if its form factor isn't
+   listed - it never sets a "visible" display value. That's on purpose:
+   a "show" rule (display:revert etc.) would stomp on whatever display
+   the element already has from elsewhere in the cascade (e.g. Aurum's
+   [data-au~="flex-container"] { display:flex }). By only ever hiding,
+   the visible state is just "no rule applied here", so the cascade
+   underneath (Aurum, project CSS) is left alone. */
 @media only screen and (max-width: 600px) {
-  [data-adaptive~="tablet-only"] { display: none; }
-  [data-adaptive~="mobile-only"] { display: revert; }
+  [data-adaptive]:not([data-adaptive~="mobile"]) { display: none; }
+}
+@media only screen and (min-width: 601px) and (max-width: 930px) {
+  [data-adaptive]:not([data-adaptive~="tablet"]) { display: none; }
+}
+@media only screen and (min-width: 931px) {
+  [data-adaptive]:not([data-adaptive~="desktop"]) { display: none; }
 }
 /* ------------- */
 
