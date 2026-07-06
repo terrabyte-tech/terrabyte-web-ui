@@ -48,7 +48,7 @@
   --primary-font: 'Manrope', sans-serif;
   --secondary-font: 'Manrope', sans-serif;
   /* other shared attributes */
-  --small-radius: 2px;
+  --small-radius: 4px;
   --large-radius: 10px;
 }
 /* dark mode */
