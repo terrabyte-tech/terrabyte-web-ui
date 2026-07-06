@@ -11,6 +11,9 @@
 
   /* new black */
   --black: #222222;
+  /* other shared attributes */
+  --small-radius: 0px;
+  --large-radius: 0px;
 }
 /* ------------- */
 
@@ -51,7 +54,7 @@ body::-webkit-scrollbar-track{
 }
 *::-webkit-scrollbar-thumb{
   background-color:var(--accent);
-  border-radius:0px;
+  border-radius:0;
   transition:0s;
 }
 /* ------------- */
