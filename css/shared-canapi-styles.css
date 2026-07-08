@@ -149,19 +149,6 @@ a.icon-link{
 }
 
 /* buttons */
-/* .button-container > *{ */
-.button-container{
-  /* gap:12px; */
-}
-.button-container > *:last-child{
-  /* margin-right:0; */
-}
-.links-container.horizontal > *{
-  /* margin-right:20px; */
-}
-.links-container.horizontal > *:last-child{
-  /* margin-right:0; */
-}
 button,
 .button,
 input[type="submit"]{
@@ -218,16 +205,6 @@ input[type="submit"]:active{
   background-color:var(--accent);
 }
 
-
-p{
-  /* margin-bottom:10px; */
-}
-p:last-child{
-  /* margin-bottom:0; */
-}
-.section-header{
-  /* margin-bottom:20px; */
-}
 h1, h2, h3, h4, h5, h6{
   font-weight:bold;
   line-height:1em;
@@ -250,6 +227,7 @@ h6{
   text-transform: uppercase;
   letter-spacing: 0;
 }
+
 table{
   width:100%;
   table-layout:fixed;
@@ -260,6 +238,9 @@ th{
 }
 td{
   text-align:left;
+}
+blockquote{
+  font-size:1.5em;
 }
 
 
@@ -284,10 +265,10 @@ td{
   color:var(--white);
 }
 .solid-section{
+  padding:20px;
   background-color:var(--background);
   box-shadow:var(--shadow);
   border-radius:var(--large-radius);
-  /* margin-bottom:20px; */
 }
 
 @media only screen and (max-width: 600px){
@@ -304,6 +285,9 @@ td{
 }
 
 /* page pieces */
+.highlight-container{
+  color:white;
+}
 /* header & main nav */
 header .canapi-logo{
   width: 125px;
@@ -346,13 +330,110 @@ header .canapi-logo{
   }
 }
 
-/* form elements */
-/* use gap-container on parent instead */
-.section-row, .form-row{
-  /* margin-bottom:20px; */
+/* card styles */
+.card-column-container.scrollable{
+  padding-top: var(--space-small);
+  padding-bottom:var(--space-large);
+  overflow-x:auto;
+  overflow-y:hidden;
 }
-.section-row:last-child, .form-row:last-child{
-  /* margin-bottom:0; */
+@media only screen and (max-width: 768px) and (min-width: 450px){
+  .card-column-container.scrollable{
+    padding-top:var(--space-small);
+    padding-bottom:var(--space-small);
+  }
+}
+@media only screen and (max-width: 450px){
+  .card-column-container.scrollable{
+    overflow-x:visible;
+    overflow-y:visible;
+    padding:0;
+  }
+}
+
+.section-card[data-au~="set-width"]{
+  max-width:200px;
+}
+/* ad cards (tall cards) */
+.section-card.ad-card{
+  position:relative;
+  height:350px;
+  max-height:100vh;
+  background-image:none;
+  background-position:center;
+  background-size:cover;
+  color:var(--white);
+  background-color:var(--accent);
+}
+.card-overlay{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:linear-gradient(135deg, transparent,var(--dark));
+  opacity:.95;
+  transition:opacity .25s;
+  border-radius:10px;
+}
+.card-overlay:hover{
+  opacity:.35;
+}
+.ad-card .section-title{
+  position:relative;
+  pointer-events: none;
+}
+.provider-highlight{
+  display:inline-block;
+  padding:0.2em 0.6em;
+  border-radius:3px;
+  margin-top:var(--space-xsmall);
+  background-color:var(--accent);
+}
+.ad-card.crane-trust,
+.ad-section.crane-trust,
+.ad-hero.crane-trust{
+  background-image:url('https://www.canapi.io/img/causes-res/crane-trust-cause-cover.jpg');
+}
+.ad-card.farmers-for-wildlife,
+.ad-section.farmers-for-wildlife,
+.ad-hero.farmers-for-wildlife{
+  background-image:url('https://www.canapi.io/img/causes-res/tree-planting-cause-cover.jpg');
+}
+.ad-card.ocean-cleanup,
+.ad-section.ocean-cleanup,
+.ad-hero.ocean-cleanup{
+  background-image:url('https://www.canapi.io/img/causes-res/ocean-plastic-cause-cover.jpg');
+}
+.ad-card.tampa-bay,
+.ad-section.tampa-bay,
+.ad-hero.tampa-bay{
+  background-image:url('https://www.canapi.io/img/causes-res/seagrass-cause-cover.jpg');
+}
+.ad-card.arbor-day,
+.ad-section.arbor-day,
+.ad-hero.arbor-day{
+  background-image:url('https://www.canapi.io/img/causes-res/nebraska-tree-planting-cause-cover.jpg');
+}
+.ad-card.green-omaha-coalition,
+.ad-section.green-omaha-coalition,
+.ad-hero.green-omaha-coalition{
+  background-image:url('https://www.canapi.io/img/causes-res/green-omaha-coalition-cause-cover.jpg');
+}
+.ad-card .icon-container{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+/* form elements */
+.row-label{
+  width:250px;
+}
+@media only screen and (max-width: 600px){
+  .row-label{
+    width:100%;
+  }
 }
 
 /* tooltips */
