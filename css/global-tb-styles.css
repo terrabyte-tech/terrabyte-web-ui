@@ -231,6 +231,7 @@ body::-webkit-scrollbar-track{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 .error-text {
   color: var(--errorred);
