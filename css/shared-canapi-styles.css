@@ -273,7 +273,8 @@ blockquote{
 
 @media only screen and (max-width: 600px){
   .padded-section{
-    padding:2rem 30px;
+    /* padding:2rem 30px; */
+    padding:2rem 20px;
   }
 }
 
@@ -300,7 +301,7 @@ header .canapi-logo{
   color:inherit;
   font-weight:normal;
   opacity:1;
-  margin-right:20px;
+  /* margin-right:20px; */
   padding:8px 10px;
   border-radius:var(--small-radius);
   font-size:18px;
