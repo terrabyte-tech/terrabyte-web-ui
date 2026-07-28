@@ -338,6 +338,7 @@ header .canapi-logo{
   padding-bottom:var(--space-large);
   overflow-x:auto;
   overflow-y:hidden;
+  scroll-snap-type: x proximity;
 }
 @media only screen and (max-width: 768px) and (min-width: 450px){
   .card-column-container.scrollable{
@@ -355,6 +356,7 @@ header .canapi-logo{
 
 .section-card[data-au~="set-width"]{
   max-width:200px;
+  scroll-snap-align: start;
 }
 /* ad cards (tall cards) */
 .section-card.ad-card{
