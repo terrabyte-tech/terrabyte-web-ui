@@ -54,47 +54,9 @@ body::-webkit-scrollbar-track{
 }
 /* ------------- */
 
+/* replaced .hide-on-mobile and .show-for-desktop with the shared [data-adaptive] system */
+/* see pixel-planet-today-website's site-styles.css for the project-specific 615px/1220px breakpoint override */
 
-
-/* FOR SHARED? MORE GLOBAL?? */
-/* could replace this mechanic with a .show-at-700 or .hide-at-800 or even .show-500-1000 */
-/* STRUCTURE */
-/* adaptive views */
-.show-for-desktop,
-.show-for-tablet,
-.show-for-mobile{
-  display:none;
-}
-/* desktop */
-@media only screen and (min-width:1220px){
-  .show-for-desktop{
-    display:block;
-  }
-  .show-for-desktop.flex-container{
-    display:flex;
-  }
-}
-/*tablet*/
-@media only screen and (min-width:615px) and (max-width:1220px){
-  .show-for-tablet{
-    display:block;
-  }
-  .show-for-tablet.flex-container{
-    display:flex;
-  }
-}
-/*mobile*/
-@media only screen and (max-width:615px){
-  .show-for-mobile{
-    display:block;
-  }
-  .show-for-mobile.flex-container{
-    display:flex;
-  }
-}
-/* ------------- */
-
-/* SHARED TOO??? */
 section{
   position:relative;
   min-height:100vh;
