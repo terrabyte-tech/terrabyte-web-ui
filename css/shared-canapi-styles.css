@@ -419,6 +419,16 @@ header .canapi-logo{
 .ad-hero.arbor-day{
   background-image:url('https://www.canapi.io/img/causes-res/nebraska-tree-planting-cause-cover.jpg');
 }
+.ad-card.us-forest-service,
+.ad-section.us-forest-service,
+.ad-hero.us-forest-service{
+  background-image:url('https://www.canapi.io/img/causes-res/forest-conservation-cause-cover.jpg');
+}
+.ad-card.one-tree-planted,
+.ad-section.one-tree-planted,
+.ad-hero.one-tree-planted{
+  background-image:url('https://www.canapi.io/img/causes-res/individual-tree-planting-cause-cover.jpg');
+}
 .ad-card.green-omaha-coalition,
 .ad-section.green-omaha-coalition,
 .ad-hero.green-omaha-coalition{
