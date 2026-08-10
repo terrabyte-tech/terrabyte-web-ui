@@ -230,6 +230,9 @@ body::-webkit-scrollbar-track{
 .warning-text {
   color: var(--warningyellow);
 }
+.accent-text {
+  color: var(--accent);
+}
 .code-text {
   font-family: var(--secondary-font);
 }
