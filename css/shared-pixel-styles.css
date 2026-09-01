@@ -50,6 +50,7 @@ body::-webkit-scrollbar-track{
 }
 *::-webkit-scrollbar-thumb{
   border-radius:0;
+  /* ^ needed? already updated border radius values above... */
   transition:0s;
 }
 /* ------------- */
@@ -179,6 +180,7 @@ input[type="submit"]{
   background-color:transparent;
   border:3px solid currentColor;
   border-radius:0;
+  /* ^ needed? already updated border radius values above... */
   padding:10px;
   font-size:15px;
   /* cursor: url("../img/ui/finger-pointer-cursor.png"), pointer; */

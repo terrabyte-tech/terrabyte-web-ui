@@ -275,7 +275,7 @@ body::-webkit-scrollbar-track{
 /* badges */
 .badge {
   padding: 2px 6px;
-  border-radius: 3px;
+  border-radius: var(--small-radius);
   background-color: var(--accent);
   color: var(--white);
   font-size: 0.75rem;

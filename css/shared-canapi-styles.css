@@ -379,7 +379,7 @@ header .canapi-logo{
   background:linear-gradient(135deg, transparent,var(--dark));
   opacity:.95;
   transition:opacity .25s;
-  border-radius:10px;
+  border-radius:var(--large-radius);
 }
 .card-overlay:hover{
   opacity:.35;
@@ -391,7 +391,7 @@ header .canapi-logo{
 .provider-highlight{
   display:inline-block;
   padding:0.2em 0.6em;
-  border-radius:3px;
+  border-radius:var(--small-radius);
   margin-top:var(--space-xsmall);
   background-color:var(--accent);
 }
