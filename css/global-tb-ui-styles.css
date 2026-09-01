@@ -194,17 +194,17 @@ input[type='submit']:active{
 }
 /* per-project, define where the toast-container should be positioned */
 /* .toast-container.top{
-  top:var(--spacing-small);
+  top:var(--space-small);
 }
 .toast-container.bottom{
-  bottom:var(--spacing-small);
+  bottom:var(--space-small);
 } */
 .toast{
   border-radius:50px;
   background-color:var(--dark);
   color:var(--white);
   font-size:0.8rem;
-  padding:var(--spacing-small);
+  padding:var(--space-small);
 }
 
 /* ------------- */

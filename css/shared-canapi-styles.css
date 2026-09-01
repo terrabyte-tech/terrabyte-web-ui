@@ -163,6 +163,7 @@ input[type="submit"]{
   transition:.25s;
 	/* transition: transform .25s, color .25s, background-color .25s, opacity .25s, border .25s; */
   font-weight:inherit;
+  line-height: 16px;
 }
 button:hover,
 .button:hover,

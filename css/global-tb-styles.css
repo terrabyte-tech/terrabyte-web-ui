@@ -23,14 +23,36 @@
   --ux-speed: .35s;
   --ux-hover-speed: var(--ux-speed);
   --ux-active-speed: .15s;
-  /* default bg/fg */
-  /* utilize data-theme on body! */
   /* spacing */
+  --space-xxsmall:0.25em;
   --space-xsmall:0.5rem;
   --space-small:1rem;
   --space-medium:2rem;
   --space-large:4rem;
   --space-xlarge:6rem;
+  /* z-index management */
+  /* sub level elements */
+  --z-bg: -20;
+  --z-below: -10;
+  /* base elements */
+  --z-base: 0;
+  --z-normal: 1;
+  /* in-context elements */
+  --z-context-overlay: 10;
+  --z-dropdown: 20;
+  --z-tooltip: 30;
+  --z-sticky: 40;
+  /* navigation elements */
+  --z-menu-overlay: 50;
+  --z-menus: 60;
+  --z-chat: 70;
+  /* global-top elements */
+  --z-global-overlay: 100;
+  --z-modal: 110;
+  --z-toast: 120;
+  --z-top: 999;
+  /* lol */
+  --zz-top: 999;
   /* other shared attributes */
   --small-radius: 2px;
   --large-radius: 10px;
@@ -162,6 +184,9 @@ body::-webkit-scrollbar-track{
 /* ------------- */
 
 /* expand on Aurum styles; eventually move to Aurum package... */
+[data-au~="xxsmall-gap"]{
+  gap: var(--space-xxsmall);
+}
 [data-au~="xsmall-gap"],
 .xsmall-gap{
   gap:var(--space-xsmall);
@@ -220,8 +245,10 @@ body::-webkit-scrollbar-track{
 }
 .overflow-ellipsis {
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  /* overflow: hidden; */
+  overflow:initial;
+  overflow-x: clip;
   max-width: 100%;
 }
 .error-text {
