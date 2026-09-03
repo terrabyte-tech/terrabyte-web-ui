@@ -9,6 +9,13 @@ module.exports = function(eleventyConfig) {
   });
 
   // -----------------------------
+  // TRIM SLASHES (strip leading/trailing "/")
+  // -----------------------------
+  eleventyConfig.addFilter("trimSlashes", function(str) {
+    return (str || "").replace(/^\/+|\/+$/g, "");
+  });
+
+  // -----------------------------
   // CANONICAL URL (shared-safe)
   // -----------------------------
   eleventyConfig.addFilter("canonicalUrl", function(pageUrl, site) {
