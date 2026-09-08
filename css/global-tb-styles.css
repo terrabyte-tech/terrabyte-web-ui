@@ -75,11 +75,11 @@
 	}
 }
 /* variables for high contrast */
-[data-theme~="dark"][data-theme~="hc"]{
+[data-theme~="dark"][data-contrast~="hc"]{
   --background: var(--black);
   --foreground: var(--white);
 }
-[data-theme~="light"][data-theme~="hc"]{
+[data-theme~="light"][data-contrast~="hc"]{
   --background: var(--white);
   --foreground: var(--black);
 }
