@@ -20,9 +20,8 @@
 :root{
   /* default avatar (before load) */
   /* --avatarPath: linear-gradient(135deg, var(--accent-lime), var(--accent)); */
-  --avatarPath: linear-gradient(135deg, var(--accent-green-light-trans), var(--accent));
-  /* --light: #ffffff; */
-  /* replace with --white */
+  --avatarPath: linear-gradient(135deg, var(--accent-a10), var(--accent));
+  /* --light: #ffffff; *//* replace with --white */
   --dark: #333841;
   --dark-trans: #33384150;
   --dark-light-trans: #33384118;
@@ -30,13 +29,6 @@
   --grey-light-trans:#e3e3e318;
   --accent:#46af71;
   --accent-lime:#80ce4d;
-  --accent-green-semi-dark-trans:#46af7185;
-  --accent-green-dark-trans:#46af7178;
-  /* --accent-lime-dark-trans:#80ce4d78; */
-  --accent-green-trans:#46af7150;
-  /* --accent-lime-trans:#80ce4d60; */
-  --accent-green-light-trans:#46af7118;
-  /* --accent-lime-light-trans:#80ce4d60; */
 
   /* shared theme management */
   --shadow:0px 8px 17px -8px rgb(0 0 0 / 10%);
@@ -66,17 +58,8 @@
 
 /* html elements */
 body{
-  /* put gradient on main page content? */
-  /* background:linear-gradient(135deg, #C1F0A3,#A0E1BA); */
-  /* background-color:var(--background); */
-  /* font-family: 'Manrope', sans-serif; */
-  /* color:var(--foreground); */
   font-size:14px;
-  background: linear-gradient(135deg, transparent, var(--accent-green-light-trans));
-  /* min-height:100vh; */
-  /* overflow:hidden; */
-  /* height:100vh; */
-  /* height: calc(var(--vh, 1vh) * 100); */
+  background: linear-gradient(135deg, transparent, var(--accent-a10));
 }
 
 /* scrollbar border-radius override (global default is 2px) */
@@ -90,10 +73,9 @@ input[type="email"],
 input[type="password"],
 select,
 textarea{
-  border:1px solid var(--accent-green-light-trans);
+  border:1px solid var(--accent-a10);
   border-radius: var(--small-radius);
   transition:border .25s, background-color .25s;
-  /* background-color: var(--background); */
   background-color: transparent;
   padding: 8px 10px;
   color: var(--foreground);
@@ -111,7 +93,7 @@ input[type="email"]:hover,
 input[type="password"]:hover,
 select:hover,
 textarea:hover{
-  border-color: var(--accent-green-trans);
+  border-color: var(--accent-a33);
 }
 input[type="text"]:active,
 input[type="text"]:focus,
@@ -123,8 +105,8 @@ select:active,
 select:focus,
 textarea:active,
 textarea:focus{
-  border-color: var(--accent-green-dark-trans);
-  background-color: var(--accent-green-light-trans);
+  border-color: var(--accent-a50);
+  background-color: var(--accent-a10);
 }
 
 /* links */
@@ -134,14 +116,11 @@ a{
 	position:	relative;
   z-index:1;
   transition:.25s;
-	/* transition: transform .25s, color .25s, background-color .25s, opacity .25s; */
 }
 a:hover{
-  color:var(--accent-green-semi-dark-trans);
+  color:var(--accent-a50);
 }
-a:active{
-  /* color:var(--accent); */
-}
+a:active{}
 a.icon-link{
   font-size:1.2em;
 }
@@ -155,16 +134,12 @@ a.icon-link{
 button,
 .button,
 input[type="submit"]{
-  border:1px solid var(--accent-green-light-trans);
+  border:1px solid var(--accent-a10);
   border-radius:var(--small-radius);
-  /* background-color:var(--background); */
   background-color:transparent;
-  /* padding:8px 10px;?????????? */
-  /* color:var(--foreground); */
   color:inherit;
 	position:	relative;
   transition:.25s;
-	/* transition: transform .25s, color .25s, background-color .25s, opacity .25s, border .25s; */
   font-weight:inherit;
   line-height: 16px;
 }
@@ -174,16 +149,13 @@ button:focus,
 .button:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus{
-  /* background-color:#CDF3DC; */
-  border-color: var(--accent-green-trans);
-  /* color: var(--accent-green-semi-dark-trans); */
-  background-color:var(--accent-green-light-trans);
+  border-color: var(--accent-a33);
+  background-color:var(--accent-a10);
 }
 button:active,
 .button:active,
 input[type="submit"]:active{
-  /* background-color:#A2E1BB; */
-  background-color:var(--accent-green-trans);
+  background-color:var(--accent-a33);
   transform:scale(.95);
 }
 /* primary buttons */
@@ -199,8 +171,7 @@ button.primary:focus,
 .button.primary:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus{
-  /* color:var(--grey); */
-  background-color:var(--accent-green-semi-dark-trans);
+  background-color:var(--accent-a50);
 }
 button.primary:active,
 .button.primary:active,
@@ -277,7 +248,6 @@ blockquote{
 
 @media only screen and (max-width: 600px){
   .padded-section{
-    /* padding:2rem 30px; */
     padding:2rem 20px;
   }
 }
@@ -305,30 +275,24 @@ header .canapi-logo{
   color:inherit;
   font-weight:normal;
   opacity:1;
-  /* margin-right:20px; */
   padding:8px 10px;
   border-radius:var(--small-radius);
   font-size:18px;
-  /* transition:background-color .25s; */
 }
 .nav-item-container:last-child{
   margin-right:0px;
 }
 .nav-item-container:hover{
-  background-color:var(--accent-green-light-trans);
+  background-color:var(--accent-a10);
   color:inherit;
 }
 .nav-item-container:active{
   color:inherit;
   opacity: 1;
   transform: scale(.97);
-  background-color:var(--accent-green-trans);
+  background-color:var(--accent-a33);
 }
 @media only screen and (max-width: 600px){
-  header .canapi-logo{
-    /* should be shown on canapi website */
-    /* display:none; */
-  }
   .canapi-logo{
     max-width: 350px;
     width:100%;
@@ -459,8 +423,6 @@ header .canapi-logo{
   position:relative;
   cursor: pointer;
   z-index:1;
-  /* white-space:nowrap; */
-  /* min-width:0; */
 }
 [data-tooltip]:after,
 .tooltip{
@@ -471,8 +433,6 @@ header .canapi-logo{
   border-radius: var(--small-radius);
   white-space: nowrap;
   min-width:0;
-  /* width:300px; */
-  /* max-width:300px; */
   border:1px solid var(--grey);
   color:var(--foreground);
   padding:12px 15px;
@@ -511,10 +471,9 @@ header .canapi-logo{
   font-family: 'Roboto Mono', Courier, monospace;
 }
 code{
-  background-color:var(--accent-green-light-trans);
+  background-color:var(--accent-a10);
 }
 .canapi-logo{
-  /* background-image: url('/img/canapi-logo.png'); */
   max-width: 100%;
   width:350px;
   height: 150px;
