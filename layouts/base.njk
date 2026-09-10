@@ -88,7 +88,8 @@
   {% endif %}
 
   <!-- frameworks -->
-  <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.1.1/au.css">
+  <!-- Aurum: each project installs @goldenharpmedia/aurum and passthrough-copies its dist/ to /css/aurum/ (see .eleventy.js) -->
+  <link rel="stylesheet" type="text/css" href="/css/aurum/au.css">
   {% block additionalFrameworks %}{% endblock %}
 
   <!-- shared Terrabyte styles -->
