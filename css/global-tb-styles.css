@@ -24,6 +24,7 @@
   --ux-hover-speed: var(--ux-speed);
   --ux-active-speed: .15s;
   /* spacing */
+  /* DEPRECATE: in aurum */
   --space-xxsmall:0.25em;
   --space-xsmall:0.5rem;
   --space-small:1rem;
@@ -184,6 +185,7 @@ body::-webkit-scrollbar-track{
 /* ------------- */
 
 /* expand on Aurum styles; eventually move to Aurum package... */
+/* DEPRECATE, supported in Aurum */
 [data-au~="xxsmall-gap"]{
   gap: var(--space-xxsmall);
 }
@@ -243,6 +245,7 @@ body::-webkit-scrollbar-track{
 .small-text {
   font-size: 0.75rem;
 }
+.large-text{}
 .overflow-ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
