@@ -13,7 +13,25 @@ body.docs ul, body.docs ol{
 }
 
 /* sections */
-.table-container {
+/* shared section styles */
+.max-width{
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+}
+.padded-section{
+  padding:var(--space-large) var(--space-medium);
+}
+@media only screen and (max-width: 600px){
+  .padded-section{
+    padding:var(--space-large) var(--space-small);
+  }
+  /* section.padded-section{
+    overflow-x: hidden;
+  } */
+}
+.crop-to,
+.table-container{
   overflow-x: auto;
 }
 blockquote {

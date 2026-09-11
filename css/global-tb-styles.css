@@ -184,7 +184,8 @@ body::-webkit-scrollbar-track{
 
 
 /* adaptive views */
-/* Breakpoints: mobile 0-600, tablet 601-930, desktop 931+. */
+/* Breakpoints: small mobile 0-450, mobile 451-600, tablet 601-930, desktop 931+. */
+/* outside of this, breakpoints may change per-project */
 @media only screen and (max-width: 600px) {
   [data-adaptive]:not([data-adaptive~="mobile"]) { display: none; }
 }
