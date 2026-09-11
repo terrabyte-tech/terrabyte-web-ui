@@ -248,6 +248,27 @@ body::-webkit-scrollbar-track{
 }
 /* ------------- */
 
+/* shared section layout — projects override the values (padding, max-width)
+   to fit, same as .eyebrow/.large-text; promoted 2026-09-11 from
+   terrabyte-website's site-styles.css, which had it identically */
+.max-width{
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+}
+.padded-section{
+  padding:var(--space-large) 30px;
+}
+@media only screen and (max-width: 900px){
+  .padded-section{
+    padding:var(--space-large) 20px;
+  }
+  section.padded-section{
+    overflow-x: hidden;
+  }
+}
+/* ------------- */
+
 /* badges */
 .badge {
   padding: 2px 6px;
