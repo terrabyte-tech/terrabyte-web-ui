@@ -267,6 +267,17 @@ body::-webkit-scrollbar-track{
     overflow-x: hidden;
   }
 }
+/* full-height section, opt-in (was baked automatically into
+   shared-pixel-styles.css's bare `section` selector until 2026-09-14 --
+   pixel projects now add this explicitly per-section, same as anyone else) */
+.full-section{
+  min-height:100vh;
+}
+@media only screen and (max-height:500px){
+  .full-section{
+    min-height:800px;
+  }
+}
 /* ------------- */
 
 /* badges */

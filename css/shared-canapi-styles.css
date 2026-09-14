@@ -229,9 +229,8 @@ blockquote{
 .padded-section{
   padding:3rem 30px;
 }
-.full-section{
-  min-height:100vh;
-}
+/* .full-section now lives in global-tb-styles.css with the identical value
+   -- nothing Canapi-specific to override here (2026-09-14) */
 .large-section{
   min-height:60vh;
 }

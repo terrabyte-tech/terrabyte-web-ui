@@ -60,9 +60,11 @@ body::-webkit-scrollbar-track{
 
 section{
   position:relative;
-  min-height:100vh;
   /* overflow:hidden; */
 }
+/* full-height sections are opt-in via .full-section (global-tb-styles.css) --
+   pixel styling shouldn't imply page layout. 2026-09-14: removed the
+   automatic min-height:100vh this rule used to carry unconditionally. */
 .section-content{
   max-width:1200px;
   margin:0 auto;
@@ -71,11 +73,6 @@ section{
 @media only screen and (max-width:615px){
   .section-content{
     padding:40px;
-  }
-}
-@media only screen and (max-height:500px){
-  section{
-    min-height:800px;
   }
 }
 /* ------------- */
