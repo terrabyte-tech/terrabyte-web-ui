@@ -125,9 +125,8 @@ hr{
 [disabled][data-tooltip] i{
   opacity:0.45!important;
 }
-[disabled][data-tooltip]:after{
-  content:"Functionality not supported";
-}
+/* disabled-tooltip text override moved to js/tooltips.js's showTooltip()
+   -- it's a real element now, not a ::after with a `content` value */
 /* hidden */
 [hidden]{
   display:none!important;

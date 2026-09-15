@@ -417,53 +417,40 @@ header .canapi-logo{
   }
 }
 
-/* tooltips */
+/* tooltips
+   Real, single shared element (js/tooltips.js in web-ui), not a
+   ::after pseudo-element -- position:fixed + JS-computed top/left so
+   it always escapes any ancestor's stacking context/overflow/scroll
+   clipping. Only one z-index matters now, since nothing else on the
+   page is a sibling of it in the stacking sense. Width is responsive
+   (wraps, capped by viewport) instead of a fixed nowrap box + a
+   separate wider ".large" variant -- text length decides wrapping,
+   not an extra class. */
 [data-tooltip]{
-  position:relative;
-  cursor: pointer;
-  z-index:var(--z-tooltip);
+  cursor:pointer;
 }
-[data-tooltip]:after,
 .tooltip{
-  /* container */
-  z-index:var(--z-global-overlay);
+  position:fixed;
+  z-index:var(--z-tooltip);
   pointer-events:none;
   background-color:var(--background);
   border-radius: var(--small-radius);
-  white-space: nowrap;
-  min-width:0;
+  max-width:min(280px, calc(100vw - 24px));
+  white-space: normal;
   border:1px solid var(--grey);
   color:var(--foreground);
   padding:12px 15px;
   box-shadow:var(--shadow);
-  position:absolute;
-  left:0;
-  /* transition */
-  transition:.35s;
+  transition:opacity .35s;
   opacity:0;
-  top:70%;
-  /* content */
-  content:attr(data-tooltip);
   text-transform: none;
   font-size:14px;
   font-weight:normal;
   letter-spacing: normal;
   text-align:left;
 }
-[data-tooltip]:hover:after,
-[data-tooltip]:hover .tooltip{
+.tooltip.is-visible{
   opacity:1;
-  top:150%;
-}
-.large[data-tooltip]:after{
-  min-width:auto;
-  width:300px;
-  white-space: initial;
-}
-[data-tooltip-force-right]:after,
-[data-tooltip-force-right] .tooltip{
-  left:unset;
-  right:0;
 }
 
 .code-text{
