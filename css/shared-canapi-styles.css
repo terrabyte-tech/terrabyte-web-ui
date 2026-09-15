@@ -114,7 +114,7 @@ a{
   color:var(--accent);
   font-weight:bold;
 	position:	relative;
-  z-index:1;
+  z-index:var(--z-normal);
   transition:.25s;
 }
 a:hover{
@@ -255,7 +255,7 @@ blockquote{
 .page-container{
   position:relative;
   overflow-x:hidden;
-  z-index:1;
+  z-index:var(--z-normal);
 }
 
 /* page pieces */
@@ -421,12 +421,12 @@ header .canapi-logo{
 [data-tooltip]{
   position:relative;
   cursor: pointer;
-  z-index:1;
+  z-index:var(--z-tooltip);
 }
 [data-tooltip]:after,
 .tooltip{
   /* container */
-  z-index:100;
+  z-index:var(--z-global-overlay);
   pointer-events:none;
   background-color:var(--background);
   border-radius: var(--small-radius);
