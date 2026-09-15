@@ -18,6 +18,7 @@ window.addEventListener("load", function(){
 
   const GAP = 8;
   const VIEWPORT_PADDING = 8;
+  const FLOAT_DISTANCE = 10; // entrance-animation offset, see showTooltip()
 
   const tooltipEl = document.createElement("div");
   tooltipEl.className = "tooltip";
@@ -27,14 +28,20 @@ window.addEventListener("load", function(){
 
   let activeTrigger = null;
 
-  function positionTooltip(trigger){
+  // Pure calculation, no DOM writes -- reused by showTooltip() (which needs
+  // the resting position before it can offset the starting one) and by the
+  // plain scroll/resize reposition below (which shouldn't replay the
+  // entrance animation).
+  function calculatePosition(trigger){
     const triggerRect = trigger.getBoundingClientRect();
     const tipRect = tooltipEl.getBoundingClientRect();
 
     let top = triggerRect.bottom + GAP;
+    let flipped = false;
     if (top + tipRect.height > window.innerHeight - VIEWPORT_PADDING){
       // no room below -- flip above the trigger instead
       top = triggerRect.top - tipRect.height - GAP;
+      flipped = true;
     }
     top = Math.max(VIEWPORT_PADDING, top);
 
@@ -45,6 +52,11 @@ window.addEventListener("load", function(){
     }
     left = Math.max(VIEWPORT_PADDING, left);
 
+    return { top, left, flipped };
+  }
+
+  function positionTooltip(trigger){
+    const { top, left } = calculatePosition(trigger);
     tooltipEl.style.top = `${top}px`;
     tooltipEl.style.left = `${left}px`;
   }
@@ -62,14 +74,30 @@ window.addEventListener("load", function(){
     activeTrigger = trigger;
     tooltipEl.textContent = text;
     trigger.setAttribute("aria-describedby", "shared-tooltip");
-    tooltipEl.classList.add("is-visible");
-    positionTooltip(trigger);
+
+    const { top, left, flipped } = calculatePosition(trigger);
+    // start a bit further from the trigger than the resting position, on
+    // whichever side it's actually showing on, then settle in toward it --
+    // below the trigger that's lower (+), flipped above it's higher (-)
+    tooltipEl.classList.remove("show");
+    tooltipEl.style.left = `${left}px`;
+    tooltipEl.style.top = `${flipped ? top - FLOAT_DISTANCE : top + FLOAT_DISTANCE}px`;
+
+    // force layout so the starting position above is committed before the
+    // next frame animates it to rest -- without this the browser can coalesce
+    // both style writes and skip the transition entirely
+    void tooltipEl.offsetHeight;
+
+    requestAnimationFrame(function(){
+      tooltipEl.style.top = `${top}px`;
+      tooltipEl.classList.add("show");
+    });
   }
 
   function hideTooltip(){
     if (activeTrigger) activeTrigger.removeAttribute("aria-describedby");
     activeTrigger = null;
-    tooltipEl.classList.remove("is-visible");
+    tooltipEl.classList.remove("show");
   }
 
   function isRealLink(trigger){

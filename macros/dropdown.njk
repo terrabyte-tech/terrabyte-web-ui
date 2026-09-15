@@ -40,7 +40,7 @@
 <div class="dropdown" data-dropdown>
   <a class="icon-link icon-container" data-au="set-width flex-container all-center"
      data-dropdown-trigger aria-haspopup="true" aria-expanded="false"
-     {% if trigger.tooltip %}data-tooltip-force-right data-tooltip="{{ trigger.tooltip }}"{% endif %}>
+     {% if trigger.tooltip %}data-tooltip="{{ trigger.tooltip }}"{% endif %}>
     {% if trigger.icon %}<i class="{{ trigger.icon }}"></i>{% endif %}
     {% if trigger.label %}<span>{{ trigger.label }}</span>{% endif %}
   </a>

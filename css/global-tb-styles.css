@@ -125,8 +125,8 @@ hr{
 [disabled][data-tooltip] i{
   opacity:0.45!important;
 }
-/* disabled-tooltip text override moved to js/tooltips.js's showTooltip()
-   -- it's a real element now, not a ::after with a `content` value */
+/* disabled-tooltip text override moved to js/tooltips.js's showTooltip() */
+
 /* hidden */
 [hidden]{
   display:none!important;

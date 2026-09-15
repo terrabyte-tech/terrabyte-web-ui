@@ -441,7 +441,7 @@ header .canapi-logo{
   color:var(--foreground);
   padding:12px 15px;
   box-shadow:var(--shadow);
-  transition:opacity .35s;
+  transition:opacity var(--ux-speed), top var(--ux-speed);
   opacity:0;
   text-transform: none;
   font-size:14px;
@@ -449,7 +449,7 @@ header .canapi-logo{
   letter-spacing: normal;
   text-align:left;
 }
-.tooltip.is-visible{
+.tooltip.show{
   opacity:1;
 }
 
