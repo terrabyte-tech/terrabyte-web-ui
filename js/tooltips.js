@@ -79,14 +79,21 @@ window.addEventListener("load", function(){
     // start a bit further from the trigger than the resting position, on
     // whichever side it's actually showing on, then settle in toward it --
     // below the trigger that's lower (+), flipped above it's higher (-)
+    //
+    // .tooltip's transition is unconditional (it also covers the fade-out),
+    // so without disabling it here this jump-to-starting-offset would
+    // itself animate too -- from wherever the tooltip last was, not from a
+    // reset position, which is exactly the "flies over from the last
+    // trigger" bug this caused before this override was added.
     tooltipEl.classList.remove("show");
+    tooltipEl.style.transition = "none";
     tooltipEl.style.left = `${left}px`;
     tooltipEl.style.top = `${flipped ? top - FLOAT_DISTANCE : top + FLOAT_DISTANCE}px`;
 
-    // force layout so the starting position above is committed before the
-    // next frame animates it to rest -- without this the browser can coalesce
-    // both style writes and skip the transition entirely
+    // force layout so the instant jump above is actually committed before
+    // transitions are re-enabled below
     void tooltipEl.offsetHeight;
+    tooltipEl.style.transition = "";
 
     requestAnimationFrame(function(){
       tooltipEl.style.top = `${top}px`;
